@@ -36,7 +36,9 @@ namespace AylikMasrafTakibi.scrViews
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            scrMain frm = new scrMain();
+            frm.Show();
         }
 
         private void btnKaydKapat_Click(object sender, EventArgs e)
