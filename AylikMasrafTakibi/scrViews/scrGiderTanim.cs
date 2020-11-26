@@ -55,18 +55,26 @@ namespace AylikMasrafTakibi.scrViews
         {
             con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
             con.Open();
-            cmd = new SqlCommand("insert into parGider VALUES (@kod, @exp, @gidertip, @vade, @pasif)", con);
-            cmd.CommandType = CommandType.Text;
+
             DataTable dt = dsGider.Tables[0];
-            DataColumn dc = dt.Columns[0];
+            DataColumn dc = new DataColumn();
+            string sqlstr = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                dr = dt.Rows[i];
-            }
-            
-      //      cmd.Parameters.Add("@kod", SqlDbType.VarChar);
-        //    cmd.Parameters["@kod"].Value = dt.Columns.ToString();
+                sqlstr = sqlstr + "update parGider set code = '"
+                    + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
+                    + dt.Rows[i]["explanation"].ToString().Trim() + "' , gidertipi = "
+                    + dt.Rows[i]["gidertipi"].ToString().Trim() + " , vadetarih =  '"
+                    + dt.Rows[i]["vadetarih"].ToString().Trim() + "' , pasif = "
+                    + dt.Rows[i]["pasif"] + "  where id = "
+                    + dt.Rows[i]["id"].ToString().Trim() +
+                    " ";
 
+            }
+
+            cmd = new SqlCommand(sqlstr, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
             con.Close();
         }
     }

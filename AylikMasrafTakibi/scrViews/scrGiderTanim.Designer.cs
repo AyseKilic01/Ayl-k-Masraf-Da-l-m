@@ -36,6 +36,7 @@
             this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexplanation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgidertipi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGiderTip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvadetarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpasif = new DevExpress.XtraGrid.Columns.GridColumn();
             this.parGiderTableAdapter1 = new AylikMasrafTakibi.afbDataSet1TableAdapters.parGiderTableAdapter();
@@ -43,7 +44,6 @@
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.colGiderTip = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsGider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -122,9 +122,18 @@
             this.colgidertipi.FieldName = "gidertipi";
             this.colgidertipi.Name = "colgidertipi";
             // 
+            // colGiderTip
+            // 
+            this.colGiderTip.Caption = "Gider Tipi";
+            this.colGiderTip.Name = "colGiderTip";
+            this.colGiderTip.Visible = true;
+            this.colGiderTip.VisibleIndex = 2;
+            // 
             // colvadetarih
             // 
             this.colvadetarih.Caption = "Vade Tarihi";
+            this.colvadetarih.DisplayFormat.FormatString = "d";
+            this.colvadetarih.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colvadetarih.FieldName = "vadetarih";
             this.colvadetarih.Name = "colvadetarih";
             this.colvadetarih.Visible = true;
@@ -179,13 +188,6 @@
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
-            // colGiderTip
-            // 
-            this.colGiderTip.Caption = "Gider Tipi";
-            this.colGiderTip.Name = "colGiderTip";
-            this.colGiderTip.Visible = true;
-            this.colGiderTip.VisibleIndex = 2;
             // 
             // scrGiderTanim
             // 

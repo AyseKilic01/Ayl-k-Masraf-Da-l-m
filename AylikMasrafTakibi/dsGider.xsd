@@ -92,7 +92,7 @@ SELECT id, code, explanation, gidertipi, vadetarih, pasif FROM parGider WHERE (i
   <xs:element name="afbDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="afbDataSet1" msprop:Generator_UserDSName="afbDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="parGider" msprop:Generator_TableClassName="parGiderDataTable" msprop:Generator_TableVarName="tableparGider" msprop:Generator_TablePropName="parGider" msprop:Generator_RowDeletingName="parGiderRowDeleting" msprop:Generator_RowChangingName="parGiderRowChanging" msprop:Generator_RowEvHandlerName="parGiderRowChangeEventHandler" msprop:Generator_RowDeletedName="parGiderRowDeleted" msprop:Generator_UserTableName="parGider" msprop:Generator_RowChangedName="parGiderRowChanged" msprop:Generator_RowEvArgName="parGiderRowChangeEvent" msprop:Generator_RowClassName="parGiderRow">
+        <xs:element name="parGider" msprop:Generator_TableClassName="parGiderDataTable" msprop:Generator_TableVarName="tableparGider" msprop:Generator_RowChangedName="parGiderRowChanged" msprop:Generator_TablePropName="parGider" msprop:Generator_RowDeletingName="parGiderRowDeleting" msprop:Generator_RowChangingName="parGiderRowChanging" msprop:Generator_RowEvHandlerName="parGiderRowChangeEventHandler" msprop:Generator_RowDeletedName="parGiderRowDeleted" msprop:Generator_RowClassName="parGiderRow" msprop:Generator_UserTableName="parGider" msprop:Generator_RowEvArgName="parGiderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -111,7 +111,7 @@ SELECT id, code, explanation, gidertipi, vadetarih, pasif FROM parGider WHERE (i
                 </xs:simpleType>
               </xs:element>
               <xs:element name="gidertipi" msprop:Generator_ColumnVarNameInTable="columngidertipi" msprop:Generator_ColumnPropNameInRow="gidertipi" msprop:Generator_ColumnPropNameInTable="gidertipiColumn" msprop:Generator_UserColumnName="gidertipi" type="xs:int" minOccurs="0" />
-              <xs:element name="vadetarih" msprop:Generator_ColumnVarNameInTable="columnvadetarih" msprop:Generator_ColumnPropNameInRow="vadetarih" msprop:Generator_ColumnPropNameInTable="vadetarihColumn" msprop:Generator_UserColumnName="vadetarih" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="vadetarih" msdata:DateTimeMode="Local" msprop:Generator_ColumnVarNameInTable="columnvadetarih" msprop:Generator_ColumnPropNameInRow="vadetarih" msprop:Generator_ColumnPropNameInTable="vadetarihColumn" msprop:Generator_UserColumnName="vadetarih" type="xs:dateTime" minOccurs="0" />
               <xs:element name="pasif" msprop:Generator_ColumnVarNameInTable="columnpasif" msprop:Generator_ColumnPropNameInRow="pasif" msprop:Generator_ColumnPropNameInTable="pasifColumn" msprop:Generator_UserColumnName="pasif" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
