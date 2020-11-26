@@ -480,7 +480,6 @@ namespace AylikMasrafTakibi {
                 this.columnid.Unique = true;
                 this.columncode.MaxLength = 100;
                 this.columnexplanation.MaxLength = 300;
-                this.columnvadetarih.DateTimeMode = global::System.Data.DataSetDateTime.Local;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

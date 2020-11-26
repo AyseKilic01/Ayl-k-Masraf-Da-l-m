@@ -65,8 +65,9 @@ namespace AylikMasrafTakibi.scrViews
                     + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
                     + dt.Rows[i]["explanation"].ToString().Trim() + "' , gidertipi = "
                     + dt.Rows[i]["gidertipi"].ToString().Trim() + " , vadetarih =  '"
-                    + dt.Rows[i]["vadetarih"].ToString().Trim() + "' , pasif = "
-                    + dt.Rows[i]["pasif"] + "  where id = "
+                    + Convert.ToDateTime(dt.Rows[i]["vadetarih"].ToString().Trim()).ToString("yyyyMMdd") + "' , pasif = "
+                    + Convert.ToByte( dt.Rows[i]["pasif"]) 
+                    + "  where id = "
                     + dt.Rows[i]["id"].ToString().Trim() +
                     " ";
 
