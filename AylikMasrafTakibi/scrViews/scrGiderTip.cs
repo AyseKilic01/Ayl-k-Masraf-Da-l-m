@@ -15,13 +15,14 @@ namespace AylikMasrafTakibi.scrViews
     {
         SqlConnection con;
         SqlCommand cmd;
-        SqlDataReader dr;
         SqlDataAdapter da;
         DataSet ds;
 
         public scrGiderTip()
         {
             InitializeComponent();
+            this.parGiderTipTableAdapter.Fill(this.dsGiderTip.parGiderTip);
+           
         }
 
         private void scrGiderTip_FormClosing(object sender, FormClosingEventArgs e)
@@ -29,20 +30,58 @@ namespace AylikMasrafTakibi.scrViews
             this.Hide();
         }
 
-        private void scrGiderTip_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'afbDataSet.parGiderTip' table. You can move, or remove it, as needed.
-            this.parGiderTipTableAdapter.Fill(this.dsGiderTip.parGiderTip);
-            grdGiderTip.OptionsView.ShowAutoFilterRow = true;
-            con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-            da = new SqlDataAdapter("Select * from parGiderTip", con);
-            ds = new DataSet();
-            ds.Clear();
-            da.Fill(ds);
-            gridControl1.DataSource = ds.Tables[0];
-            da.Dispose();
-            con.Dispose();
+        //private void scrGiderTip_Load(object sender, EventArgs e)
+        //{
+        //    // TODO: This line of code loads data into the 'afbDataSet.parGiderTip' table. You can move, or remove it, as needed.
+            
+        //    grdGiderTip.OptionsView.ShowAutoFilterRow = true;
+        //    con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
+        //    da = new SqlDataAdapter("Select * from parGiderTip", con);
+        //    ds = new DataSet();
+        //    ds.Clear();
+        //    da.Fill(ds);
+        //    gridControl1.DataSource = ds.Tables[0];
+        //    da.Dispose();
+        //    con.Dispose();
 
+        //}
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            scrMain frm = new scrMain();
+            frm.Show();
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            Kaydet();
+        }
+
+        private void Kaydet()
+        {
+            con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
+            con.Open();
+            DataTable dt = dsGiderTip.Tables[0];
+   
+            string sqlstr = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                sqlstr = sqlstr + "update parGiderTip set code = '"
+                    + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
+                    + dt.Rows[i]["explanation"].ToString().Trim() + "' , pasif = " 
+                    + Convert.ToByte(dt.Rows[i]["pasif"])
+                    + "  where id = "
+                    + dt.Rows[i]["id"].ToString().Trim() +
+                    " ";
+
+            }
+
+            cmd = new SqlCommand(sqlstr, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        
     }
 }

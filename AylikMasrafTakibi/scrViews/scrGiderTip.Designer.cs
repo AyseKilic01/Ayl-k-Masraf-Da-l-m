@@ -45,9 +45,9 @@
             this.colpasif = new DevExpress.XtraGrid.Columns.GridColumn();
             this.parGiderTipTableAdapter = new AylikMasrafTakibi.afbDataSetTableAdapters.parGiderTipTableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parGiderTipBindingSource)).BeginInit();
@@ -103,6 +103,7 @@
             this.gridView1.NewItemRowText = "Yeni Kayıt Satırı";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -186,22 +187,23 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton3);
+            this.groupControl1.Controls.Add(this.btnKapat);
             this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.btnKaydet);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(799, 60);
             this.groupControl1.TabIndex = 2;
             // 
-            // simpleButton3
+            // btnKapat
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(223, 24);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Kapat";
+            this.btnKapat.Location = new System.Drawing.Point(223, 24);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(75, 23);
+            this.btnKapat.TabIndex = 2;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // simpleButton2
             // 
@@ -211,13 +213,14 @@
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "Kaydet && Kapat";
             // 
-            // simpleButton1
+            // btnKaydet
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(31, 24);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Kaydet";
+            this.btnKaydet.Location = new System.Drawing.Point(31, 24);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(75, 23);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // scrGiderTip
             // 
@@ -231,7 +234,6 @@
             this.Text = "Gider Tipleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scrGiderTip_FormClosing);
-            this.Load += new System.EventHandler(this.scrGiderTip_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parGiderTipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsGiderTip)).EndInit();
@@ -257,9 +259,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colexplanation;
         private DevExpress.XtraGrid.Columns.GridColumn colpasif;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnKapat;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
