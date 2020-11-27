@@ -78,7 +78,7 @@ SELECT id, code, explanation, pasif FROM parGiderTip WHERE (id = @id)</CommandTe
   <xs:element name="afbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="afbDataSet" msprop:Generator_UserDSName="afbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="parGiderTip" msprop:Generator_TableClassName="parGiderTipDataTable" msprop:Generator_TableVarName="tableparGiderTip" msprop:Generator_TablePropName="parGiderTip" msprop:Generator_RowDeletingName="parGiderTipRowDeleting" msprop:Generator_RowChangingName="parGiderTipRowChanging" msprop:Generator_RowEvHandlerName="parGiderTipRowChangeEventHandler" msprop:Generator_RowDeletedName="parGiderTipRowDeleted" msprop:Generator_UserTableName="parGiderTip" msprop:Generator_RowChangedName="parGiderTipRowChanged" msprop:Generator_RowEvArgName="parGiderTipRowChangeEvent" msprop:Generator_RowClassName="parGiderTipRow">
+        <xs:element name="parGiderTip" msprop:Generator_TableClassName="parGiderTipDataTable" msprop:Generator_TableVarName="tableparGiderTip" msprop:Generator_RowChangedName="parGiderTipRowChanged" msprop:Generator_TablePropName="parGiderTip" msprop:Generator_RowDeletingName="parGiderTipRowDeleting" msprop:Generator_RowChangingName="parGiderTipRowChanging" msprop:Generator_RowEvHandlerName="parGiderTipRowChangeEventHandler" msprop:Generator_RowDeletedName="parGiderTipRowDeleted" msprop:Generator_RowClassName="parGiderTipRow" msprop:Generator_UserTableName="parGiderTip" msprop:Generator_RowEvArgName="parGiderTipRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -96,7 +96,7 @@ SELECT id, code, explanation, pasif FROM parGiderTip WHERE (id = @id)</CommandTe
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="pasif" msprop:Generator_ColumnVarNameInTable="columnpasif" msprop:Generator_ColumnPropNameInRow="pasif" msprop:Generator_ColumnPropNameInTable="pasifColumn" msprop:Generator_UserColumnName="pasif" type="xs:boolean" minOccurs="0" />
+              <xs:element name="pasif" msprop:Generator_ColumnVarNameInTable="columnpasif" msprop:Generator_ColumnPropNameInRow="pasif" msprop:Generator_ColumnPropNameInTable="pasifColumn" msprop:Generator_UserColumnName="pasif" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -21,8 +21,12 @@ namespace AylikMasrafTakibi.scrViews
         public scrGiderTip()
         {
             InitializeComponent();
-            this.parGiderTipTableAdapter.Fill(this.dsGiderTip.parGiderTip);
+            Refresh();
            
+        }
+        public void Refresh()
+        {
+            this.parGiderTipTableAdapter.Fill(this.dsGiderTip.parGiderTip);
         }
 
         private void scrGiderTip_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,21 +70,37 @@ namespace AylikMasrafTakibi.scrViews
             string sqlstr = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                sqlstr = sqlstr + "update parGiderTip set code = '"
-                    + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
-                    + dt.Rows[i]["explanation"].ToString().Trim() + "' , pasif = " 
-                    + Convert.ToByte(dt.Rows[i]["pasif"])
-                    + "  where id = "
-                    + dt.Rows[i]["id"].ToString().Trim() +
-                    " ";
+                if (Convert.ToInt32(dt.Rows[i]["id"]) <= -1)
+                {
+                    sqlstr = sqlstr + " insert into parGiderTip VALUES('" 
+                        + dt.Rows[i]["code"].ToString().Trim() +
+                        "', '" 
+                        + dt.Rows[i]["explanation"].ToString().Trim() +
+                        "' , " 
+                        + Convert.ToByte(dt.Rows[i]["pasif"]) +
+                        ") ";
 
+                }
+                else
+                {
+                    sqlstr = sqlstr + "update parGiderTip set code = '"
+                        + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
+                        + dt.Rows[i]["explanation"].ToString().Trim() + "' , pasif = "
+                        + Convert.ToByte(dt.Rows[i]["pasif"])
+                        + "  where id = "
+                        + dt.Rows[i]["id"].ToString().Trim() +
+                        " ";
+                }
             }
 
             cmd = new SqlCommand(sqlstr, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             con.Close();
+            dt.Clear();
+            Refresh();
         }
+
 
         
     }

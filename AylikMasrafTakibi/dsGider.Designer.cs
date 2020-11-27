@@ -523,6 +523,7 @@ namespace AylikMasrafTakibi {
                 this.columnid.Unique = true;
                 this.columncode.MaxLength = 100;
                 this.columnexplanation.MaxLength = 300;
+                this.columnpasif.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -829,6 +830,7 @@ namespace AylikMasrafTakibi {
                 this.columnid.Unique = true;
                 this.columncode.MaxLength = 100;
                 this.columnexplanation.MaxLength = 300;
+                this.columnpasif.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
