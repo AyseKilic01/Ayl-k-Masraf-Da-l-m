@@ -14,25 +14,32 @@ namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTanim : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
+        SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
+        SqlCommand cmd, command;
         DataRow dr;
+        SqlDataAdapter da = new SqlDataAdapter();
+        DataTable dt = new DataTable();
         public scrGiderTanim()
         {
             InitializeComponent();
-            Refresh();
-        } 
-        public void Refresh()
+            Load();
+           
+        }
+        public void Load()
         {
-            parGiderTableAdapter1.Fill(dsGider.parGider);
+            command = new SqlCommand("select a.*, gidertipkod = b.code from parGider a "
+            + "left outer join parGiderTip b on b.id = a.gidertipi", con);
+            da.SelectCommand = command;
+            da.Fill(dt);
+            gridControl1.DataSource = dt;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                repositoryItemComboBox1.Items.Add(dt.Rows[i]["gidertipkod"].ToString().Trim());
+            }
         }
 
         public bool Validate()
         {
-            con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-            con.Open();
-
-            DataTable dt = dsGider.Tables[0];
             for(int i = 0; i<dt.Rows.Count; i++)
             {
                 if(dt.Rows[i]["code"].ToString().Trim() == "" 
@@ -43,9 +50,7 @@ namespace AylikMasrafTakibi.scrViews
                     return false;
                 }
             }
-            con.Close();
-
-            return true;
+                return true;
 
         }
 
@@ -53,19 +58,16 @@ namespace AylikMasrafTakibi.scrViews
         {
             Application.Exit();
         }
-
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Hide();
             scrMain frm = new scrMain();
             frm.Show();
         }
-
         private void btnKaydKapat_Click(object sender, EventArgs e)
         {
 
         }
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Kaydet();
@@ -73,11 +75,7 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void Kaydet()
         {
-            con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
             con.Open();
-
-            DataTable dt = dsGider.Tables[0];
-            DataTable dt2 = dsGider.parGiderTip;
             string sqlstr = "";
             if (Validate())
             {
@@ -93,7 +91,9 @@ namespace AylikMasrafTakibi.scrViews
                             + "', "
                             + Convert.ToByte(dt.Rows[i]["pasif"]) +
                             ") ";
-
+                        cmd = new SqlCommand(sqlstr, con);
+                        da.InsertCommand = cmd;
+                        da.InsertCommand.ExecuteNonQuery();
                     }
                     else
                     {
@@ -106,6 +106,9 @@ namespace AylikMasrafTakibi.scrViews
                         + "  where id = "
                         + dt.Rows[i]["id"].ToString().Trim() +
                         " ";
+                        cmd = new SqlCommand(sqlstr, con);
+                        da.UpdateCommand = cmd;
+                        da.UpdateCommand.ExecuteNonQuery();
                     }
                 }
                 
@@ -114,14 +117,9 @@ namespace AylikMasrafTakibi.scrViews
             {
                 MessageBox.Show("Boş alanlar var. . . ");
             }
-            if (sqlstr != "")
-            {
-                cmd = new SqlCommand(sqlstr, con);
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-            }
+
             con.Close();
-            Refresh();
+          
         }
     }
 }

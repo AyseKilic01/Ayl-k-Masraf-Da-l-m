@@ -13,27 +13,29 @@ namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTip : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter da;
+        SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
+        SqlCommand cmd, command;
+        SqlDataAdapter da = new SqlDataAdapter();
         DataSet ds;
-
+        DataTable dt = new DataTable();
         public scrGiderTip()
         {
             InitializeComponent();
-            Refresh();
+            Load();
 
         }
-        public void Refresh()
+        public void Load()
         {
-            this.parGiderTipTableAdapter.Fill(this.dsGiderTip.parGiderTip);
+            command = new SqlCommand("Select * from parGiderTip", con);
+            da.SelectCommand = command;
+            da.Fill(dt);
+            gridControl1.DataSource = dt;
         }
 
         private void scrGiderTip_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
         }
-
         //private void scrGiderTip_Load(object sender, EventArgs e)
         //{
         //    // TODO: This line of code loads data into the 'afbDataSet.parGiderTip' table. You can move, or remove it, as needed.
@@ -55,23 +57,19 @@ namespace AylikMasrafTakibi.scrViews
             scrMain frm = new scrMain();
             frm.Show();
         }
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Kaydet();
         }
-
         private void Kaydet()
         {
-            con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-            con.Open();
-            DataTable dt = dsGiderTip.Tables[0];
-
+           con.Open();
             string sqlstr = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (Convert.ToInt32(dt.Rows[i]["id"]) <= -1)
+                if (Convert.ToInt32(dt.Rows[i]["id"]) <= -1 || dt.Rows[i]["id"] == null)
                 {
+
                     sqlstr = sqlstr + " insert into parGiderTip VALUES('"
                         + dt.Rows[i]["code"].ToString().Trim() +
                         "', '"
@@ -79,7 +77,9 @@ namespace AylikMasrafTakibi.scrViews
                         "' , "
                         + Convert.ToByte(dt.Rows[i]["pasif"]) +
                         ") ";
-
+                    cmd = new SqlCommand(sqlstr, con);
+                    da.InsertCommand = cmd;
+                    da.InsertCommand.ExecuteNonQuery();
                 }
                 else
                 {
@@ -90,15 +90,12 @@ namespace AylikMasrafTakibi.scrViews
                         + "  where id = "
                         + dt.Rows[i]["id"].ToString().Trim() +
                         " ";
+                    cmd = new SqlCommand(sqlstr, con);
+                    da.UpdateCommand = cmd;
+                    da.UpdateCommand.ExecuteNonQuery();
                 }
             }
-
-            cmd = new SqlCommand(sqlstr, con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
             con.Close();
-            dt.Clear();
-            Refresh();
         }
 
 

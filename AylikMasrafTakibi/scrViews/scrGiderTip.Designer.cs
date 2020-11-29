@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.parGiderTipBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsGiderTip = new AylikMasrafTakibi.afbDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,20 +40,15 @@
             this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexplanation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpasif = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.parGiderTipTableAdapter = new AylikMasrafTakibi.afbDataSetTableAdapters.parGiderTipTableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parGiderTipBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGiderTip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGiderTip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // vScrollBar1
@@ -70,7 +62,6 @@
             // gridControl1
             // 
             this.gridControl1.AllowDrop = true;
-            this.gridControl1.DataSource = this.parGiderTipBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 60);
             this.gridControl1.MainView = this.gridView1;
@@ -80,16 +71,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
             this.grdGiderTip});
-            // 
-            // parGiderTipBindingSource
-            // 
-            this.parGiderTipBindingSource.DataMember = "parGiderTip";
-            this.parGiderTipBindingSource.DataSource = this.dsGiderTip;
-            // 
-            // dsGiderTip
-            // 
-            this.dsGiderTip.DataSetName = "dsGiderTip";
-            this.dsGiderTip.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -181,10 +162,6 @@
             this.colpasif.Visible = true;
             this.colpasif.VisibleIndex = 2;
             // 
-            // parGiderTipTableAdapter
-            // 
-            this.parGiderTipTableAdapter.ClearBeforeFill = true;
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.btnKapat);
@@ -235,13 +212,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scrGiderTip_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parGiderTipBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGiderTip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGiderTip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,9 +225,6 @@
         private DevExpress.XtraEditors.VScrollBar vScrollBar1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView grdGiderTip;
-        private afbDataSet dsGiderTip;
-        private System.Windows.Forms.BindingSource parGiderTipBindingSource;
-        private afbDataSetTableAdapters.parGiderTipTableAdapter parGiderTipTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colcode;
         private DevExpress.XtraGrid.Columns.GridColumn colexplanation;
@@ -267,6 +238,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        public DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

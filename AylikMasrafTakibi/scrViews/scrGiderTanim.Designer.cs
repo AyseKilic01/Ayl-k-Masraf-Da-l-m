@@ -30,7 +30,6 @@
         {
             this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsGider = new AylikMasrafTakibi.afbDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,16 +38,16 @@
             this.colGiderTip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvadetarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpasif = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.parGiderTableAdapter1 = new AylikMasrafTakibi.afbDataSet1TableAdapters.parGiderTableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // vScrollBar1
@@ -61,21 +60,16 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "parGider";
-            this.gridControl1.DataSource = this.dsGider;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 60);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1});
             this.gridControl1.Size = new System.Drawing.Size(580, 201);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // dsGider
-            // 
-            this.dsGider.DataSetName = "dsGider";
-            this.dsGider.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -127,6 +121,7 @@
             // colGiderTip
             // 
             this.colGiderTip.Caption = "Gider Tipi";
+            this.colGiderTip.ColumnEdit = this.repositoryItemComboBox1;
             this.colGiderTip.Name = "colGiderTip";
             this.colGiderTip.Visible = true;
             this.colGiderTip.VisibleIndex = 2;
@@ -148,10 +143,6 @@
             this.colpasif.Name = "colpasif";
             this.colpasif.Visible = true;
             this.colpasif.VisibleIndex = 4;
-            // 
-            // parGiderTableAdapter1
-            // 
-            this.parGiderTableAdapter1.ClearBeforeFill = true;
             // 
             // groupControl1
             // 
@@ -191,6 +182,13 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // scrGiderTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,10 +202,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scrGiderTanim_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,18 +214,17 @@
         private DevExpress.XtraEditors.VScrollBar vScrollBar1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private afbDataSet1 dsGider;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colcode;
         private DevExpress.XtraGrid.Columns.GridColumn colexplanation;
         private DevExpress.XtraGrid.Columns.GridColumn colgidertipi;
         private DevExpress.XtraGrid.Columns.GridColumn colvadetarih;
         private DevExpress.XtraGrid.Columns.GridColumn colpasif;
-        private afbDataSet1TableAdapters.parGiderTableAdapter parGiderTableAdapter1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnKapat;
         private DevExpress.XtraEditors.SimpleButton btnKaydKapat;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraGrid.Columns.GridColumn colGiderTip;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
     }
 }
