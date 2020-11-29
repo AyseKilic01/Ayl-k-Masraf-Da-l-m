@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scrGiderTip));
             this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "scrGiderTip";
             this.Text = "Gider Tipleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

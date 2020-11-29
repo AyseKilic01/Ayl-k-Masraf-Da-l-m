@@ -34,7 +34,7 @@ namespace AylikMasrafTakibi.scrViews
 
         private void scrGiderTip_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
         //private void scrGiderTip_Load(object sender, EventArgs e)
         //{
@@ -53,9 +53,8 @@ namespace AylikMasrafTakibi.scrViews
         //}
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            scrMain frm = new scrMain();
-            frm.Show();
+            this.Close();
+            
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -67,7 +66,7 @@ namespace AylikMasrafTakibi.scrViews
             string sqlstr = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (Convert.ToInt32(dt.Rows[i]["id"]) <= -1 || dt.Rows[i]["id"] == null)
+                if (dt.Rows[i]["id"] == DBNull.Value)
                 {
 
                     sqlstr = sqlstr + " insert into parGiderTip VALUES('"
@@ -97,8 +96,6 @@ namespace AylikMasrafTakibi.scrViews
             }
             con.Close();
         }
-
-
 
     }
 }

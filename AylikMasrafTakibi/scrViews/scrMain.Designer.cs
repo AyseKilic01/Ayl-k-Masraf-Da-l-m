@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scrMain));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
@@ -37,6 +38,8 @@
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.btnGiderTip = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.btnGiderHar = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.btnRaporAylik = new DevExpress.XtraBars.BarButtonItem();
@@ -47,8 +50,6 @@
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
-            this.btnGiderHar = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +143,21 @@
             this.btnGiderTanim.Name = "btnGiderTanim";
             this.btnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
             // 
+            // barSubItem6
+            // 
+            this.barSubItem6.Caption = "Gider Takibi";
+            this.barSubItem6.Id = 13;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderHar)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // btnGiderHar
+            // 
+            this.btnGiderHar.Caption = "Gider Hareketleri";
+            this.btnGiderHar.Id = 14;
+            this.btnGiderHar.Name = "btnGiderHar";
+            this.btnGiderHar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHar_ItemClick);
+            // 
             // barSubItem4
             // 
             this.barSubItem4.Caption = "Raporlar";
@@ -219,21 +235,6 @@
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barSubItem6
-            // 
-            this.barSubItem6.Caption = "Gider Takibi";
-            this.barSubItem6.Id = 13;
-            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderHar)});
-            this.barSubItem6.Name = "barSubItem6";
-            // 
-            // btnGiderHar
-            // 
-            this.btnGiderHar.Caption = "Gider Hareketleri";
-            this.btnGiderHar.Id = 14;
-            this.btnGiderHar.Name = "btnGiderHar";
-            this.btnGiderHar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHar_ItemClick);
-            // 
             // scrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +244,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "scrMain";
             this.Text = "Aylık Masraf Takibi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

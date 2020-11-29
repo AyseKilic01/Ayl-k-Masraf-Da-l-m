@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scrGiderTanim));
             this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -35,19 +36,19 @@
             this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexplanation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgidertipi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGiderTip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gidertipkod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colvadetarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpasif = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // vScrollBar1
@@ -78,7 +79,7 @@
             this.colcode,
             this.colexplanation,
             this.colgidertipi,
-            this.colGiderTip,
+            this.gidertipkod,
             this.colvadetarih,
             this.colpasif});
             this.gridView1.GridControl = this.gridControl1;
@@ -118,13 +119,21 @@
             this.colgidertipi.FieldName = "gidertipi";
             this.colgidertipi.Name = "colgidertipi";
             // 
-            // colGiderTip
+            // gidertipkod
             // 
-            this.colGiderTip.Caption = "Gider Tipi";
-            this.colGiderTip.ColumnEdit = this.repositoryItemComboBox1;
-            this.colGiderTip.Name = "colGiderTip";
-            this.colGiderTip.Visible = true;
-            this.colGiderTip.VisibleIndex = 2;
+            this.gidertipkod.Caption = "Gider Tipi";
+            this.gidertipkod.ColumnEdit = this.repositoryItemComboBox1;
+            this.gidertipkod.FieldName = "gidertipkod";
+            this.gidertipkod.Name = "gidertipkod";
+            this.gidertipkod.Visible = true;
+            this.gidertipkod.VisibleIndex = 2;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // colvadetarih
             // 
@@ -182,13 +191,6 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
             // scrGiderTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,15 +199,16 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "scrGiderTanim";
             this.Text = "Gider Tanımları";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scrGiderTanim_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,7 +227,7 @@
         private DevExpress.XtraEditors.SimpleButton btnKapat;
         private DevExpress.XtraEditors.SimpleButton btnKaydKapat;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
-        private DevExpress.XtraGrid.Columns.GridColumn colGiderTip;
+        private DevExpress.XtraGrid.Columns.GridColumn gidertipkod;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
     }
 }
