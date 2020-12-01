@@ -61,6 +61,7 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.AllowDrop = true;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 60);
             this.gridControl1.MainView = this.gridView1;
@@ -86,6 +87,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -130,6 +132,9 @@
             // 
             // repositoryItemComboBox1
             // 
+            this.repositoryItemComboBox1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.repositoryItemComboBox1.Appearance.BackColor2 = System.Drawing.Color.Teal;
+            this.repositoryItemComboBox1.Appearance.Options.UseBackColor = true;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -148,8 +153,10 @@
             // colpasif
             // 
             this.colpasif.Caption = "Pasif";
+            this.colpasif.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colpasif.FieldName = "pasif";
             this.colpasif.Name = "colpasif";
+            this.colpasif.Tag = false;
             this.colpasif.Visible = true;
             this.colpasif.VisibleIndex = 4;
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using AylikMasrafTakibi.Reports;
 
 namespace AylikMasrafTakibi.scrViews
 {
@@ -63,9 +64,16 @@ namespace AylikMasrafTakibi.scrViews
         #region reports
         private void btnRaporAylik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            RepAylikMasrafTakip aylk = new RepAylikMasrafTakip();
+            aylk.Show();
         }
         #endregion
+
+        private void btnGiderHareketi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            RepGiderHareketleri gdr = new RepGiderHareketleri();
+            gdr.Show();
+        }
 
     }
 }

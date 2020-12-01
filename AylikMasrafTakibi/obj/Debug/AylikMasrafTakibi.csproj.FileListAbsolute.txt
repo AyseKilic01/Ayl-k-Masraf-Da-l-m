@@ -115,3 +115,6 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasraf
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.exe
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.pdb
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.csprojResolveAssemblyReference.cache
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.Reports.RepGiderHareketleri.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.Reports.RepAylikMasrafTakip.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.UserControls.ucGiderHareketi.resources

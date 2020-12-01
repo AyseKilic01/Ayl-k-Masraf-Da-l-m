@@ -50,6 +50,7 @@
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiderHareketi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,8 +77,9 @@
             this.barSubItem5,
             this.btnRaporAylik,
             this.barSubItem6,
-            this.btnGiderHar});
-            this.barManager1.MaxItemId = 15;
+            this.btnGiderHar,
+            this.btnGiderHareketi});
+            this.barManager1.MaxItemId = 16;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -171,7 +173,8 @@
             this.barSubItem5.Caption = "Muhasebe Takip Raporları";
             this.barSubItem5.Id = 11;
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRaporAylik)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRaporAylik),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderHareketi)});
             this.barSubItem5.Name = "barSubItem5";
             // 
             // btnRaporAylik
@@ -235,6 +238,13 @@
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
+            // btnGiderHareketi
+            // 
+            this.btnGiderHareketi.Caption = "Gider Hareketleri";
+            this.btnGiderHareketi.Id = 15;
+            this.btnGiderHareketi.Name = "btnGiderHareketi";
+            this.btnGiderHareketi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHareketi_ItemClick);
+            // 
             // scrMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +287,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarSubItem barSubItem6;
         private DevExpress.XtraBars.BarButtonItem btnGiderHar;
+        private DevExpress.XtraBars.BarButtonItem btnGiderHareketi;
     }
 }

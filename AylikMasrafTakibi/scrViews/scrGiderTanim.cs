@@ -22,6 +22,7 @@ namespace AylikMasrafTakibi.scrViews
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt = new DataTable();
         DataTable dt1 = new DataTable();
+  
         public scrGiderTanim()
         {
             InitializeComponent();
@@ -30,21 +31,22 @@ namespace AylikMasrafTakibi.scrViews
         }
         public void Load()
         {
-            command = new SqlCommand("select a.*, gidertipkod = b.code from parGider a "
-            + "left outer join parGiderTip b on b.id = a.gidertipi", con);
+            command = new SqlCommand("select a.id, a.code, a.explanation, a.vadetarih, a.pasif, gidertipkod = b.code from parGider a " +
+                " left outer join parGiderTip b on b.id = a.gidertipi " 
+            , con);
             da.SelectCommand = command;
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
-            da1.SelectCommand = new SqlCommand("select code from parGiderTip where pasif = 0", con);
+            da1.SelectCommand = new SqlCommand("select gidertipi = id, code from parGiderTip where pasif = 0", con);
             da1.Fill(dt1);
             for (int i = 0; i < dt1.Rows.Count; i++)
             {
                 repositoryItemComboBox1.Items.Add(dt1.Rows[i]["code"].ToString().Trim());
             }
-            repositoryItemComboBox1.SelectedIndexChanged += new EventHandler(ritem_SelectedIndexChanged);
+       
             
-
+            
         }
 
         public bool Validate()
@@ -65,7 +67,7 @@ namespace AylikMasrafTakibi.scrViews
   
             void ritem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+             
         }
         private void scrGiderTanim_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -90,9 +92,11 @@ namespace AylikMasrafTakibi.scrViews
         {
             con.Open();
             string sqlstr = "";
+            string s = "";
             
             if (Validate())
             {
+                da.Update(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     if (dt.Rows[i]["id"] == DBNull.Value)
@@ -100,7 +104,7 @@ namespace AylikMasrafTakibi.scrViews
                         sqlstr = sqlstr + " insert into parGider VALUES('"
                             + dt.Rows[i]["code"].ToString().Trim() + "', "
                             + dt.Rows[i]["explanation"].ToString().Trim() + "', "
-                            + repositoryItemComboBox1.Items.IndexOf("code") + " , '"
+                            + Convert.ToInt32(dt1.Rows[i]["gidertipi"]) + " , '"
                             + Convert.ToDateTime(dt.Rows[i]["vadetarih"].ToString().Trim()).ToString("yyyyMMdd")
                             + "', "
                             + Convert.ToByte(dt.Rows[i]["pasif"]) +
@@ -114,7 +118,7 @@ namespace AylikMasrafTakibi.scrViews
                         sqlstr = sqlstr + "update parGider set code = '"
                         + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
                         + dt.Rows[i]["explanation"].ToString().Trim() + "' , gidertipi = "
-                        + dt.Rows[i]["gidertipi"] + " , vadetarih =  '"
+                        + Convert.ToInt32(dt1.Rows[i]["gidertipi"]) + " , vadetarih =  '"
                         + Convert.ToDateTime(dt.Rows[i]["vadetarih"].ToString().Trim()).ToString("yyyyMMdd") + "' , pasif = "
                         + Convert.ToByte(dt.Rows[i]["pasif"])
                         + "  where id = "
