@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AylikMasrafTakibi.Entities;
 
 namespace AylikMasrafTakibi.scrViews
 {
@@ -17,12 +18,10 @@ namespace AylikMasrafTakibi.scrViews
     {
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
         SqlCommand cmd, command;
-        DataRow dr;
         SqlDataAdapter da = new SqlDataAdapter();
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt = new DataTable();
         DataTable dt1 = new DataTable();
-  
         public scrGiderTanim()
         {
             InitializeComponent();
@@ -51,18 +50,7 @@ namespace AylikMasrafTakibi.scrViews
 
         public bool Validate()
         {
-            for(int i = 0; i<dt.Rows.Count; i++)
-            {
-                if(dt.Rows[i]["code"].ToString().Trim() == "" 
-                    || dt.Rows[i]["explanation"].ToString().Trim() == ""
-                   || dt.Rows[i]["gidertipkod"].ToString().Trim() == "" 
-                   )
-                {
-                    return false;
-                }
-            }
-                return true;
-
+            return true;
         }
   
             void ritem_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,7 +59,9 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void scrGiderTanim_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            scrMain frm = new scrMain();
+            frm.Show();
         }
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -81,7 +71,16 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void btnKaydKapat_Click(object sender, EventArgs e)
         {
+            if (true)
+            {
+                this.Hide();
+                scrMain frm = new scrMain();
+                frm.Show();
+            }
+            else
+            {
 
+            }
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -90,54 +89,8 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void Kaydet()
         {
-            con.Open();
-            string sqlstr = "";
-            string s = "";
             
-            if (Validate())
-            {
-                da.Update(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    if (dt.Rows[i]["id"] == DBNull.Value)
-                    {
-                        sqlstr = sqlstr + " insert into parGider VALUES('"
-                            + dt.Rows[i]["code"].ToString().Trim() + "', "
-                            + dt.Rows[i]["explanation"].ToString().Trim() + "', "
-                            + Convert.ToInt32(dt1.Rows[i]["gidertipi"]) + " , '"
-                            + Convert.ToDateTime(dt.Rows[i]["vadetarih"].ToString().Trim()).ToString("yyyyMMdd")
-                            + "', "
-                            + Convert.ToByte(dt.Rows[i]["pasif"]) +
-                            ") ";
-                        cmd = new SqlCommand(sqlstr, con);
-                        da.InsertCommand = cmd;
-                        da.InsertCommand.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        sqlstr = sqlstr + "update parGider set code = '"
-                        + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
-                        + dt.Rows[i]["explanation"].ToString().Trim() + "' , gidertipi = "
-                        + Convert.ToInt32(dt1.Rows[i]["gidertipi"]) + " , vadetarih =  '"
-                        + Convert.ToDateTime(dt.Rows[i]["vadetarih"].ToString().Trim()).ToString("yyyyMMdd") + "' , pasif = "
-                        + Convert.ToByte(dt.Rows[i]["pasif"])
-                        + "  where id = "
-                        + dt.Rows[i]["id"].ToString().Trim() +
-                        " ";
-                        cmd = new SqlCommand(sqlstr, con);
-                        da.UpdateCommand = cmd;
-                        da.UpdateCommand.ExecuteNonQuery();
-                    }
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("Boş alanlar var. . . ");
-            }
 
-            con.Close();
-          
         }
     }
 }

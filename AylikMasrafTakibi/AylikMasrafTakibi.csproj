@@ -80,9 +80,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Entities\cDeleteCommand.cs" />
-    <Compile Include="Entities\cInsertCommand.cs" />
-    <Compile Include="Entities\cUpdateCommand.cs" />
+    <Compile Include="Entities\cSqlCommandInsert.cs" />
+    <Compile Include="Entities\cSqlCommandUpdate.cs" />
     <Compile Include="Reports\RepAylikMasrafTakip.cs">
       <SubType>Form</SubType>
     </Compile>

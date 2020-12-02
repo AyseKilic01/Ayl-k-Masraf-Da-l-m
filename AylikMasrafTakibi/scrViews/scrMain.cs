@@ -67,13 +67,15 @@ namespace AylikMasrafTakibi.scrViews
             RepAylikMasrafTakip aylk = new RepAylikMasrafTakip();
             aylk.Show();
         }
-        #endregion
 
         private void btnGiderHareketi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             RepGiderHareketleri gdr = new RepGiderHareketleri();
             gdr.Show();
         }
+        #endregion
+
+
 
     }
 }
