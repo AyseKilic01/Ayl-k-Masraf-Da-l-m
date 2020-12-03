@@ -54,9 +54,9 @@
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(580, 60);
+            this.vScrollBar1.Location = new System.Drawing.Point(868, 60);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 201);
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 422);
             this.vScrollBar1.TabIndex = 1;
             // 
             // gridControl1
@@ -68,7 +68,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControl1.Size = new System.Drawing.Size(580, 201);
+            this.gridControl1.Size = new System.Drawing.Size(868, 422);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -168,7 +168,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(597, 60);
+            this.groupControl1.Size = new System.Drawing.Size(885, 60);
             this.groupControl1.TabIndex = 3;
             // 
             // btnKapat
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 261);
+            this.ClientSize = new System.Drawing.Size(885, 482);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.groupControl1);

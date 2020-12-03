@@ -87,9 +87,26 @@ namespace AylikMasrafTakibi.scrViews
             Kaydet();
 
         }
+
+        
+
         private void Kaydet()
         {
+
+            cSqlCommandInsert cs = new cSqlCommandInsert();
+            //  string str = "insert into parGider VALUES('Elektrik', 'Elektrik Faturas', 1031, '2020-12-05', 0)";
+            string str = "";
+            string[] arr = new string[dt.Rows.Count];
+            for(int i = 0; i<dt.Rows.Count; i++)
+            {for(int j = 0; j<dt.Columns.Count; j++)
+                {
+                    arr[i] += dt.Rows[i][j].ToString().Trim() + "";
+                }
+                
+            }
+            cs.SqlCommandInsert("parGider", arr);
             
+        
 
         }
     }

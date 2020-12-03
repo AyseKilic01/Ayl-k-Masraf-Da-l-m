@@ -13,56 +13,35 @@ namespace AylikMasrafTakibi.Entities
 
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
 
-        string values;
-        string master;
-        string condition;
-
-        public string Values
-        {
-            get { return values; }
-            set { values = value; }
-        }
-        public string Master
-        {
-            get { return master; }
-            set { master = value; }
-        }
-
-        public string Condition
-        {
-            get { return condition; }
-            set { condition = value; }
-        }
         public cSqlCommandUpdate()
         {
                 
         }
 
-        public cSqlCommandUpdate(string Values, string Master)
+        public bool SqlCommandUpdate(Array[] Values, string Master)
         {
             string command = "update " + Master + " set  "+ Values + " ";
-            RunQueryUpdate(command);
+            return RunQueryUpdate(command);
         }
 
-        public cSqlCommandUpdate(string Values, string Master, string Condition)
+        public bool SqlCommandUpdate(Array[] Values, string Master, Array[] Condition)
         {
             string command = "update " + Master + " set " + Values + " where " + Condition + " " ;
-            RunQueryUpdate(command);
+            return RunQueryUpdate(command);
         }
 
 
-        public bool RunQueryUpdate(string ProcedureName)
+        public bool RunQueryUpdate(string Procedure)
         {
             bool res = false;
             try
             {
+                con.Open();
                 SqlDataAdapter da = new SqlDataAdapter();
-                SqlCommand Command = new SqlCommand();
-                Command.CommandText = ProcedureName;
-                Command.CommandType = CommandType.StoredProcedure;
-                Command.Connection = con;
-                da.UpdateCommand = Command;
+                da.UpdateCommand = new SqlCommand(Procedure, con);
+                da.UpdateCommand.ExecuteNonQuery();
                 res = true;
+                con.Close();
             }
             catch (Exception ex)
             {

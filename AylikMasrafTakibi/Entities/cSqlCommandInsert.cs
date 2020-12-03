@@ -14,55 +14,30 @@ namespace AylikMasrafTakibi.Entities
     {
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
 
-        string values;
-        string master;
-        string condition;
+        public bool SqlCommandInsert(string Master, string[] Values)
+        {
+            string str = "";
+            for (int i = 0; i < Values.Length; i++) {
+                str = Values[i]+ ", ";
+            }
+            string command = "insert into " + Master + " Values(" +
+               str  + ")";
 
-        public string Values
-        {
-            get { return values; }
-            set { values = value; }
-        }
-        public string Master
-        {
-            get { return master; }
-            set { master = value; }
+            return RunQueryInsert(command);
         }
 
-        public string Condition
-        {
-            get { return condition; }
-            set { condition = value; }
-        }
-
-
-        public cSqlCommandInsert()
-        {
-
-        }
-        public cSqlCommandInsert(string Master, string Values)
-        {
-            string command = "insert into " + Master + "( " + " ) values (" + Values + ")";
-            RunQueryInsert(command);
-        }
-
-        public cSqlCommandInsert(string Master, string Values, string Condition)
-        {
-            string command = "insert into " + Master +"( "+ " ) values ("+ Values +") where " + Condition + " ";
-            RunQueryInsert(command);
-        }
-        public bool RunQueryInsert(string ProcedureName)
+        public bool RunQueryInsert(string Procedure)
         {
             bool res = false;
             try
             {
-                SqlCommand Command = new SqlCommand();
+                con.Open();
                 SqlDataAdapter da = new SqlDataAdapter();
-                Command.CommandText = ProcedureName;
-                Command.CommandType = CommandType.StoredProcedure;
-                Command.Connection = con;
-                da.InsertCommand = Command;
+                SqlCommand command = new SqlCommand(Procedure, con);
+                da.InsertCommand = command;
+                da.InsertCommand.ExecuteNonQuery();
                 res = true;
+                con.Close();
             }
             catch (Exception ex)
             {
