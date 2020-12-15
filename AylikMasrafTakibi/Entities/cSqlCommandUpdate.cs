@@ -10,34 +10,57 @@ namespace AylikMasrafTakibi.Entities
 {
     class cSqlCommandUpdate
     {
-
+        #region constructor
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-
+        SqlCommandBuilder cmdBuilder;
+        DataTable changes;
+        #endregion
         public cSqlCommandUpdate()
         {
-                
+
         }
 
-        public bool SqlCommandUpdate(Array[] Values, string Master)
+        public bool SqlCommandUpdate(string Master, DataTable Values, SqlDataAdapter da)
         {
-            string command = "update " + Master + " set  "+ Values + " ";
-            return RunQueryUpdate(command);
+            string str = "";
+            
+            switch (Master)
+            {
+                case "parGider":
+                    for (int i = 0; i < Values.Rows.Count; i++)
+                    {
+                        str = str + "update " + Master + " set code = '" 
+                            + Values.Rows[i]["code"] + "', explanation= '" 
+                            + Values.Rows[i]["explanation"] 
+                            + "', gidertipi = 1031, vadetarih = '" 
+                            + Values.Rows[i]["vadetarih"] + "', pasif = " 
+                            +Convert.ToByte(Values.Rows[i]["pasif"]) + " where id = "
+                            + Values.Rows[i]["id"] + " ";
+                        
+                    }
+                    break;
+                case "parGiderTip":
+                    for (int i = 0; i < Values.Rows.Count; i++)
+                    {
+                        str = str + "update " + Master + " set code = '"
+                            + Values.Rows[i]["code"] + "', explanation= '"
+                            + Values.Rows[i]["explanation"]
+                            + "', pasif = "
+                            + Convert.ToByte(Values.Rows[i]["pasif"]) + " where id = "
+                            + Values.Rows[i]["id"] + " ";
+                    }
+                    break;
+            }
+         
+            return RunQueryUpdate(str, da);
         }
-
-        public bool SqlCommandUpdate(Array[] Values, string Master, Array[] Condition)
-        {
-            string command = "update " + Master + " set " + Values + " where " + Condition + " " ;
-            return RunQueryUpdate(command);
-        }
-
-
-        public bool RunQueryUpdate(string Procedure)
+  
+        public bool RunQueryUpdate(string Procedure, SqlDataAdapter da)
         {
             bool res = false;
             try
             {
                 con.Open();
-                SqlDataAdapter da = new SqlDataAdapter();
                 da.UpdateCommand = new SqlCommand(Procedure, con);
                 da.UpdateCommand.ExecuteNonQuery();
                 res = true;

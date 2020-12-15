@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace AylikMasrafTakibi.Entities
 {
-
-
-    class cSqlCommandInsert
+    class CSqlCrud
     {
-        #region constructor
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
         SqlCommandBuilder cmdBuilder;
         DataTable changes;
-        #endregion
+
         public bool SqlCommandInsert(string Master, DataTable Values, SqlDataAdapter da)
         {
             string str = "";
@@ -25,7 +22,7 @@ namespace AylikMasrafTakibi.Entities
                 case "parGider":
                     for (int i = 0; i < Values.Rows.Count; i++)
                     {
-                        str = "insert into " + Master + " Values('" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', " 
+                        str = " '" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', "
                             //+ Values.Rows[i]["gidertip"] 
                             + "1031 "
                             + ", '" + Convert.ToDateTime(Values.Rows[i]["vadetarih"]) + "', " + Convert.ToByte(Values.Rows[i]["pasif"]);
@@ -34,17 +31,22 @@ namespace AylikMasrafTakibi.Entities
                 case "parGiderTip":
                     for (int i = 0; i < Values.Rows.Count; i++)
                     {
-                        str = "insert into " + Master + " Values('" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', " + Convert.ToByte(Values.Rows[i]["pasif"]);
+                        str = " '" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', " + Convert.ToByte(Values.Rows[i]["pasif"]);
                     }
                     break;
                 default:
                     break;
 
             }
-      
-            return RunQueryInsert(str, da);
+
+            string command = "insert into " + Master + " Values(" +
+               str + ")";
+
+            return RunQueryInsert(command, da);
         }
-        public bool CheckInsert(SqlDataAdapter da, DataTable dt)
+
+
+        public bool Check(SqlDataAdapter da, DataTable dt)
         {
             cmdBuilder = new SqlCommandBuilder(da);
             changes = dt.GetChanges();
@@ -59,8 +61,9 @@ namespace AylikMasrafTakibi.Entities
                 }
             }
             return false;
-          
+
         }
+
         public bool RunQueryInsert(string Procedure, SqlDataAdapter da)
         {
             bool res = false;

@@ -212,7 +212,6 @@
             this.Name = "scrGiderTip";
             this.Text = "Gider Tipleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.scrGiderTip_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGiderTip)).EndInit();

@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AylikMasrafTakibi.Entities;
 
 namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTip : Form
     {
+        #region constructor
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
         SqlCommand cmd, command;
         SqlDataAdapter da = new SqlDataAdapter();
         DataSet ds;
         DataTable dt = new DataTable();
+        cSqlCommandInsert csi = new cSqlCommandInsert();
+        cSqlCommandUpdate csu = new cSqlCommandUpdate();
+        #endregion
         public scrGiderTip()
         {
             InitializeComponent();
@@ -32,10 +37,7 @@ namespace AylikMasrafTakibi.scrViews
             gridControl1.DataSource = dt;
         }
 
-        private void scrGiderTip_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Close();
-        }
+       
         //private void scrGiderTip_Load(object sender, EventArgs e)
         //{
         //    // TODO: This line of code loads data into the 'afbDataSet.parGiderTip' table. You can move, or remove it, as needed.
@@ -53,8 +55,10 @@ namespace AylikMasrafTakibi.scrViews
         //}
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            this.Close();
-            
+            this.Hide();
+            scrMain frm = new scrMain();
+            frm.Show();
+
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -62,39 +66,16 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void Kaydet()
         {
-           con.Open();
-            string sqlstr = "";
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (csi.CheckInsert(da, dt))
             {
-                if (dt.Rows[i]["id"] == DBNull.Value)
-                {
+                csi.SqlCommandInsert("parGiderTip", dt, da);
 
-                    sqlstr = sqlstr + " insert into parGiderTip VALUES('"
-                        + dt.Rows[i]["code"].ToString().Trim() +
-                        "', '"
-                        + dt.Rows[i]["explanation"].ToString().Trim() +
-                        "' , "
-                        + Convert.ToByte(dt.Rows[i]["pasif"]) +
-                        ") ";
-                    cmd = new SqlCommand(sqlstr, con);
-                    da.InsertCommand = cmd;
-                    da.InsertCommand.ExecuteNonQuery();
-                }
-                else
-                {
-                    sqlstr = sqlstr + "update parGiderTip set code = '"
-                        + dt.Rows[i]["code"].ToString().Trim() + "' , explanation = '"
-                        + dt.Rows[i]["explanation"].ToString().Trim() + "' , pasif = "
-                        + Convert.ToByte(dt.Rows[i]["pasif"])
-                        + "  where id = "
-                        + dt.Rows[i]["id"].ToString().Trim() +
-                        " ";
-                    cmd = new SqlCommand(sqlstr, con);
-                    da.UpdateCommand = cmd;
-                    da.UpdateCommand.ExecuteNonQuery();
-                }
             }
-            con.Close();
+
+            else
+            {
+                csu.SqlCommandUpdate("parGiderTip", dt, da);
+            }
         }
 
     }
