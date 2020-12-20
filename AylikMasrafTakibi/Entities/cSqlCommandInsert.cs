@@ -12,23 +12,22 @@ namespace AylikMasrafTakibi.Entities
 
     class cSqlCommandInsert
     {
-        #region constructor
+        #region const
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
         SqlCommandBuilder cmdBuilder;
         DataTable changes;
         #endregion
         public bool SqlCommandInsert(string Master, DataTable Values, SqlDataAdapter da)
         {
-            string str = "";
+            string str = "set dateformat dmy ";
             switch (Master)
             {
                 case "parGider":
                     for (int i = 0; i < Values.Rows.Count; i++)
                     {
-                        str = "insert into " + Master + " Values('" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', " 
-                            //+ Values.Rows[i]["gidertip"] 
-                            + "1031 "
-                            + ", '" + Convert.ToDateTime(Values.Rows[i]["vadetarih"]) + "', " + Convert.ToByte(Values.Rows[i]["pasif"]);
+                        str = str + "insert into " + Master + " Values('" + Values.Rows[i]["code"] + "', '" + Values.Rows[i]["explanation"] + "', " 
+                            + Values.Rows[i]["gidertipkod"] 
+                            + ", '" + Convert.ToDateTime(Values.Rows[i]["vadetarih"]) + "', " + Convert.ToByte(Values.Rows[i]["pasif"]) + ")  ";
                     }
                     break;
                 case "parGiderTip":

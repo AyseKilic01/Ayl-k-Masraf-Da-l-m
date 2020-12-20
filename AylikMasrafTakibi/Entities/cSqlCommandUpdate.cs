@@ -10,10 +10,8 @@ namespace AylikMasrafTakibi.Entities
 {
     class cSqlCommandUpdate
     {
-        #region constructor
+        #region const
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        SqlCommandBuilder cmdBuilder;
-        DataTable changes;
         #endregion
         public cSqlCommandUpdate()
         {
@@ -32,7 +30,9 @@ namespace AylikMasrafTakibi.Entities
                         str = str + "update " + Master + " set code = '" 
                             + Values.Rows[i]["code"] + "', explanation= '" 
                             + Values.Rows[i]["explanation"] 
-                            + "', gidertipi = 1031, vadetarih = '" 
+                            + "', gidertipi = "
+                            + Values.Rows[i]["gidertipkod"] 
+                            +", vadetarih = '"
                             + Values.Rows[i]["vadetarih"] + "', pasif = " 
                             +Convert.ToByte(Values.Rows[i]["pasif"]) + " where id = "
                             + Values.Rows[i]["id"] + " ";

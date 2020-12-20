@@ -18,9 +18,9 @@ namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTanim : Form
     {
-        #region constructor
+        #region const
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        SqlCommand cmd, command;
+        SqlCommand command;
         SqlDataAdapter da = new SqlDataAdapter();
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt = new DataTable();
@@ -34,10 +34,10 @@ namespace AylikMasrafTakibi.scrViews
         public scrGiderTanim()
         {
             InitializeComponent();
-            Load();
+            List();
          
         }
-        public void Load()
+        public void List()
         {
             command = new SqlCommand("select a.id, a.code, a.explanation, a.vadetarih, a.pasif, gidertipkod = b.code, gidertip = b.id from parGider a " +
                 " left outer join parGiderTip b on b.id = a.gidertipi " 
@@ -47,13 +47,14 @@ namespace AylikMasrafTakibi.scrViews
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
-            da1.SelectCommand = new SqlCommand("select gidertip = id, code from parGiderTip where pasif = 0", con);
-            da1.Fill(dt1);
+            da1.SelectCommand = new SqlCommand("select gidertip = id, kod = code from parGiderTip where pasif = 0", con);
 
-            for (int i = 0; i < dt1.Rows.Count; i++)
-            {
-               repositoryItemComboBox1.Items.Add(Convert.ToString(dt1.Rows[i]["code"]));               
-            }
+            da1.Fill(dt1);
+            repositoryItems.DataSource = dt1;
+            repositoryItems.ValueMember = "gidertip";
+            repositoryItems.DisplayMember = "kod";
+
+            gidertipkod.ColumnEdit = repositoryItems;
     
         }
 
@@ -91,20 +92,21 @@ namespace AylikMasrafTakibi.scrViews
             Kaydet();
 
         }
+        
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
            
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            var kod = gridView1.GetFocusedRowCellValue("code").ToString();
-            var aciklama = gridView1.GetFocusedRowCellValue("explanation").ToString();
-            var gidertipkod = gridView1.GetFocusedRowCellValue("gidertipkod").ToString();
+        //private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        //{
+        //    var kod = gridView1.GetFocusedRowCellValue("code").ToString();
+        //    var aciklama = gridView1.GetFocusedRowCellValue("explanation").ToString();
+        //    var gidertipkod = gridView1.GetFocusedRowCellValue("gidertipkod").ToString();
             
-            var a = gridView1.GetFocusedRowCellValue("gidertip").ToString();
-        }
+        //    var a = gridView1.GetFocusedRowCellValue("gidertip").ToString();
+        //}
 
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -113,6 +115,26 @@ namespace AylikMasrafTakibi.scrViews
             dt.Rows.Remove(deger);
             gridControl1.DataSource = dt;
             XtraMessageBox.Show("Silindi");
+        }
+
+        private void gridView1_RowDeleting(object sender, DevExpress.Data.RowDeletingEventArgs e)
+        {
+
+        }
+
+        private void repositoryItemComboBox1_EditValueChanged(object sender, EventArgs e)
+        {       
+          
+            var ge = gridView1.EditingValue.ToString();
+            //      gridView1.SetFocusedRowCellValue("gidertipkod",ge);
+            
+
+            XtraMessageBox.Show(ge);
+        }
+
+        private void gridView1_RowDeleted(object sender, DevExpress.Data.RowDeletedEventArgs e)
+        {
+
         }
 
         private void Kaydet()

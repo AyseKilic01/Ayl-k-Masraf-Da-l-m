@@ -15,6 +15,10 @@ namespace AylikMasrafTakibi.Entities
             switch (TableName)
             {
                 case "parGider":
+                    for(int i = 0; i<dt.Rows.Count; i++)
+                    {
+
+                    }
                 break;
                 case "parGiderTip":
                 break;

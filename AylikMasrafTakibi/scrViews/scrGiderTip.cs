@@ -16,9 +16,8 @@ namespace AylikMasrafTakibi.scrViews
     {
         #region constructor
         SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        SqlCommand cmd, command;
+        SqlCommand command;
         SqlDataAdapter da = new SqlDataAdapter();
-        DataSet ds;
         DataTable dt = new DataTable();
         cSqlCommandInsert csi = new cSqlCommandInsert();
         cSqlCommandUpdate csu = new cSqlCommandUpdate();
@@ -26,10 +25,10 @@ namespace AylikMasrafTakibi.scrViews
         public scrGiderTip()
         {
             InitializeComponent();
-            Load();
+            List();
 
         }
-        public void Load()
+        public void List()
         {
             command = new SqlCommand("Select * from parGiderTip", con);
             da.SelectCommand = command;
