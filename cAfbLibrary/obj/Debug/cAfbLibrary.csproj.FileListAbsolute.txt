@@ -1,0 +1,3 @@
+C:\Users\ayse\CProject\AylikMasrafTakibi\cAfbLibrary\obj\Debug\cAfbLibrary.cAfbTool.cBar.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\cAfbLibrary\obj\Debug\cAfbLibrary.csproj.GenerateResource.Cache
+C:\Users\ayse\CProject\AylikMasrafTakibi\cAfbLibrary\obj\Debug\cAfbLibrary.dll.licenses

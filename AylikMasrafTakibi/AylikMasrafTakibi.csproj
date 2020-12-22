@@ -212,5 +212,11 @@
   <ItemGroup>
     <Content Include="finance.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\afbLibrary\afbLibrary.csproj">
+      <Project>{7002e004-eb8d-424d-b161-cf30c69e3b0f}</Project>
+      <Name>afbLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
