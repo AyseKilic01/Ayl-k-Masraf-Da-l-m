@@ -12,50 +12,72 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AylikMasrafTakibi.Entities;
 using afbLibrary;
+using DevExpress.XtraEditors.Controls;
 
 namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTanim : Form
     {
         #region const
-        SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        SqlCommand command;
-        SqlDataAdapter da = new SqlDataAdapter();
-        SqlDataAdapter da1 = new SqlDataAdapter();
-        DataTable dt = new DataTable();
-        DataTable dt1 = new DataTable();
-        cSqlDataAdapter ddd = new cSqlDataAdapter();
 
-        cSqlCommandInsert csi = new cSqlCommandInsert();
-        cSqlCommandUpdate csu = new cSqlCommandUpdate();
+        DataTable dtMain = new DataTable();
+        SqlDataAdapter daMain = new SqlDataAdapter();
+        SqlConnection con = new SqlConnection(cons.getConnectionString());
+
+
+
         #endregion
-   
+
         public scrGiderTanim()
         {
             InitializeComponent();
-            List();
-         
+            
+
         }
-        public void List()
+        private void List()
         {
-            command = new SqlCommand("select a.id, a.code, a.explanation, a.vadetarih, a.pasif, gidertipkod = b.code, gidertip = b.id from parGider a " +
-                " left outer join parGiderTip b on b.id = a.gidertipi " 
-            , con);
-          
-            da.SelectCommand = command;
-            da.Fill(dt);
-            cGridControl1.DataSource = dt;
 
-            da1.SelectCommand = new SqlCommand("select gidertip = id, kod = code from parGiderTip where pasif = 0", con);
-
-            da1.Fill(dt1);
+           
             //repositoryItems.DataSource = dt1;
             //repositoryItems.ValueMember = "gidertip";
             //repositoryItems.DisplayMember = "kod";
 
             //gidertipkod.ColumnEdit = repositoryItems;
-    
+            LookUpEdit1.NullText = "";
+
+
+            SqlCommand cmm = new SqlCommand();
+            cmm.Connection = con;
+            cmm.CommandText = "select gidertip = id, gidertipkod = code from parGiderTip where pasif = 0";
+            SqlDataAdapter da = new SqlDataAdapter(cmm);
+            DataTable dtGiderTip = new DataTable();
+            da.Fill(dtGiderTip);
+            LookUpEdit1.DataSource = dtGiderTip;
+            LookUpEdit1.DisplayMember = "gidertipkod";
+            LookUpEdit1.ValueMember = "gidertip";
+            LookUpEdit1.Columns.Add(new LookUpColumnInfo("gidertipkod", 40, "Gider Tipi"));
+
+            cmm.Parameters.Clear();
+            cmm.Connection = con;
+            cmm.CommandText = "select a.id, a.code, a.explanation, gidertipkod = b.code, gidertip = b.id, a.vadetarih, a.pasif  from parGider a " +
+                " left outer join parGiderTip b on b.id = a.gidertipi ";
+            cmm.Parameters.AddWithValue("@gidertipkod", LookUpEdit1.DisplayMember);
+            daMain = new SqlDataAdapter(cmm);
+            cCommandBuilder cb = new cCommandBuilder();
+            cb.AddField("id", SqlDbType.Int, 4, true);
+            cb.AddField("code", SqlDbType.VarChar, 50);
+            cb.AddField("gidertip", SqlDbType.Int, 4, true);
+            cb.AddField("explanation", SqlDbType.VarChar, 130);
+            cb.AddField("vadetarih", SqlDbType.DateTime, 4);
+            cb.AddField("pasif", SqlDbType.Bit, 0);    
+            cb.SqlTableName = "parGider";
+            cb.Con = con;
+            cb.CreateCommands(daMain);
+
+            daMain.Fill(dtMain);
+
         }
+
 
         public bool Kontrol()
         {
@@ -67,26 +89,29 @@ namespace AylikMasrafTakibi.scrViews
             scrMain frm = new scrMain();
             frm.Show();
         }
-      
-        
+
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Kaydet();
 
         }
-        
+
         private void Kaydet()
         {
-            if (csi.CheckInsert(da, dt))
-            {
-                csi.SqlCommandInsert("parGider", dt, da);
-                
-            }
-            else
-            {
-                csu.SqlCommandUpdate("parGider", dt, da);
-            }
+            gridView1.UpdateCurrentRow();
+            daMain.Update(dtMain);
+        }
 
+        private void cGridControl1_Load(object sender, EventArgs e)
+        {
+            List();
+            cGridControl1.DataSource = dtMain;
+        }
+
+        private void LookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

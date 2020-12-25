@@ -30,10 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cBarManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cBarManager.Designer.cs">
+      <DependentUpon>cBarManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cEntities\cCommandBuilder.cs" />
+    <Compile Include="cEntities\conscs.cs" />
+    <Compile Include="cEntities\cSqlCommand.cs" />
     <Compile Include="cGridControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="cGridControl.Designer.cs">
       <DependentUpon>cGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cGridLookupEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cGridLookupEdit.Designer.cs">
+      <DependentUpon>cGridLookupEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,5 +73,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

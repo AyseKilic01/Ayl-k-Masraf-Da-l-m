@@ -80,13 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Entities\cSqlCommandInsert.cs" />
-    <Compile Include="Entities\cSqlCommandUpdate.cs" />
-    <Compile Include="Entities\CSqlCrud.cs" />
     <Compile Include="Entities\cSqlDataAdapter.cs" />
-    <Compile Include="Entities\Dto\DtoGider.cs" />
-    <Compile Include="Entities\Dto\DtoGiderTip.cs" />
-    <Compile Include="Entities\ParameterizedQueries.cs" />
     <Compile Include="Reports\RepAylikMasrafTakip.cs">
       <SubType>Form</SubType>
     </Compile>

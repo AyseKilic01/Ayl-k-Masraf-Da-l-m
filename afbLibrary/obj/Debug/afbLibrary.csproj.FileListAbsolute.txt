@@ -79,7 +79,7 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\bin\Debug\de\DevExpress.Offi
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\bin\Debug\es\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\bin\Debug\ja\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\bin\Debug\ru\DevExpress.Office.v18.1.Core.resources.dll
-C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.csprojResolveAssemblyReference.cache
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.dll.licenses
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.pdb
+C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.csprojResolveAssemblyReference.cache

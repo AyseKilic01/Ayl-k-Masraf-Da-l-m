@@ -8,50 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AylikMasrafTakibi.Entities;
+using afbLibrary;
 
 namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTip : Form
     {
         #region constructor
-        SqlConnection con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        SqlCommand command;
-        SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable();
-        cSqlCommandInsert csi = new cSqlCommandInsert();
-        cSqlCommandUpdate csu = new cSqlCommandUpdate();
+        DataTable dtMain = new DataTable();
+        SqlDataAdapter daMain = new SqlDataAdapter();
+        SqlConnection con = new SqlConnection(cons.getConnectionString());
         #endregion
         public scrGiderTip()
         {
             InitializeComponent();
-            List();
-
         }
-        public void List()
+        private void List()
         {
-            command = new SqlCommand("Select * from parGiderTip", con);
-            da.SelectCommand = command;
-            da.Fill(dt);
-            gridControl1.DataSource = dt;
+            SqlCommand cmm = new SqlCommand();
+            cmm.Connection = con;
+            cmm.CommandText = "Select a.id, a.code, a.explanation, a.pasif from parGiderTip a ";
+            daMain = new SqlDataAdapter(cmm);
+            cCommandBuilder cb = new cCommandBuilder();
+            cb.AddField("id", SqlDbType.Int, 4, true);
+            cb.AddField("code", SqlDbType.VarChar, 50);
+            cb.AddField("explanation", SqlDbType.VarChar, 130);
+            cb.AddField("pasif", SqlDbType.Bit, 0);
+            cb.SqlTableName = "parGiderTip";
+            cb.Con = con;
+            cb.CreateCommands(daMain);
+
+            daMain.Fill(dtMain);
+
         }
 
-       
-        //private void scrGiderTip_Load(object sender, EventArgs e)
-        //{
-        //    // TODO: This line of code loads data into the 'afbDataSet.parGiderTip' table. You can move, or remove it, as needed.
-
-        //    grdGiderTip.OptionsView.ShowAutoFilterRow = true;
-        //    con = new SqlConnection("server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI");
-        //    da = new SqlDataAdapter("Select * from parGiderTip", con);
-        //    ds = new DataSet();
-        //    ds.Clear();
-        //    da.Fill(ds);
-        //    gridControl1.DataSource = ds.Tables[0];
-        //    da.Dispose();
-        //    con.Dispose();
-
-        //}
+     
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -65,17 +56,14 @@ namespace AylikMasrafTakibi.scrViews
         }
         private void Kaydet()
         {
-            if (csi.CheckInsert(da, dt))
-            {
-                csi.SqlCommandInsert("parGiderTip", dt, da);
-
-            }
-
-            else
-            {
-                csu.SqlCommandUpdate("parGiderTip", dt, da);
-            }
+            gridView2.UpdateCurrentRow();
+            daMain.Update(dtMain);
         }
 
+        private void gridControl1_Load(object sender, EventArgs e)
+        {
+            List();
+            cGridControl1.DataSource = dtMain;
+        }
     }
 }
