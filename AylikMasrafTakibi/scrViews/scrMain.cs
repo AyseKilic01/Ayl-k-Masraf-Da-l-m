@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AylikMasrafTakibi.Reports;
+using AylikMasrafTakibi.AForms;
 
 namespace AylikMasrafTakibi.scrViews
 {
@@ -51,7 +52,13 @@ namespace AylikMasrafTakibi.scrViews
             frm.Show();
             this.Hide();
         }
+        private void btnFirmaTanim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AFrmFirmaList frm = new AFrmFirmaList();
+            frm.Show();
+            this.Hide();
 
+        }
         #endregion
 
         #region actions
@@ -73,9 +80,10 @@ namespace AylikMasrafTakibi.scrViews
             RepGiderHareketleri gdr = new RepGiderHareketleri();
             gdr.Show();
         }
+
+
         #endregion
 
-
-
+        
     }
 }

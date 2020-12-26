@@ -120,3 +120,5 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasraf
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.csprojResolveAssemblyReference.cache
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.pdb
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.AForms.AFrmFirmaList.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.AForms.AFrmGiderHareketList.resources

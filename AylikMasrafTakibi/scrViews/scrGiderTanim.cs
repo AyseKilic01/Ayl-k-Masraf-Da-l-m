@@ -21,6 +21,7 @@ namespace AylikMasrafTakibi.scrViews
         #region const
 
         DataTable dtMain = new DataTable();
+        DataTable dtTip = new DataTable();
         SqlDataAdapter daMain = new SqlDataAdapter();
         SqlConnection con = new SqlConnection(cons.getConnectionString());
 
@@ -50,18 +51,15 @@ namespace AylikMasrafTakibi.scrViews
             cmm.Connection = con;
             cmm.CommandText = "select gidertip = id, gidertipkod = code from parGiderTip where pasif = 0";
             SqlDataAdapter da = new SqlDataAdapter(cmm);
-            DataTable dtGiderTip = new DataTable();
-            da.Fill(dtGiderTip);
-            LookUpEdit1.DataSource = dtGiderTip;
-            LookUpEdit1.DisplayMember = "gidertipkod";
-            LookUpEdit1.ValueMember = "gidertip";
-            LookUpEdit1.Columns.Add(new LookUpColumnInfo("gidertipkod", 40, "Gider Tipi"));
+            da.Fill(dtTip);
+           
+
 
             cmm.Parameters.Clear();
             cmm.Connection = con;
             cmm.CommandText = "select a.id, a.code, a.explanation, gidertipkod = b.code, gidertip = b.id, a.vadetarih, a.pasif  from parGider a " +
                 " left outer join parGiderTip b on b.id = a.gidertipi ";
-            cmm.Parameters.AddWithValue("@gidertipkod", LookUpEdit1.DisplayMember);
+            
             daMain = new SqlDataAdapter(cmm);
             cCommandBuilder cb = new cCommandBuilder();
             cb.AddField("id", SqlDbType.Int, 4, true);
@@ -107,11 +105,20 @@ namespace AylikMasrafTakibi.scrViews
         {
             List();
             cGridControl1.DataSource = dtMain;
+            LookUpEdit1.DataSource = dtTip;
+            LookUpEdit1.DisplayMember = "gidertipkod";
+            LookUpEdit1.ValueMember = "gidertip";
+            LookUpEdit1.Columns.Add(new LookUpColumnInfo("gidertipkod", 40, "Gider Tipi"));
         }
 
         private void LookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void btnKaydet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Kaydet();
         }
     }
 }

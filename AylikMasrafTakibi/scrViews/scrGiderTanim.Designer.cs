@@ -44,7 +44,7 @@
             this.colgidertip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cBarManager1 = new afbLibrary.cBarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKaydet = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -141,6 +141,7 @@
             this.gidertipkod.ColumnEdit = this.LookUpEdit1;
             this.gidertipkod.FieldName = "gidertipkod";
             this.gidertipkod.Name = "gidertipkod";
+            this.gidertipkod.Tag = "";
             this.gidertipkod.Visible = true;
             this.gidertipkod.VisibleIndex = 2;
             // 
@@ -187,7 +188,7 @@
             this.cBarManager1.DockControls.Add(this.barDockControlRight);
             this.cBarManager1.Form = this;
             this.cBarManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
+            this.btnKaydet,
             this.barButtonItem2,
             this.barButtonItem3});
             this.cBarManager1.MainMenu = this.bar2;
@@ -201,18 +202,20 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKaydet),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // barButtonItem1
+            // btnKaydet
             // 
-            this.barButtonItem1.Caption = "Kaydet";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnKaydet.Caption = "Kaydet";
+            this.btnKaydet.Id = 0;
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            this.btnKaydet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKaydet_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -310,7 +313,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit1;
         private afbLibrary.cBarManager cBarManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Bar bar3;
@@ -318,5 +320,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem btnKaydet;
     }
 }

@@ -43,6 +43,7 @@
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.btnRaporAylik = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiderHareketi = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -50,7 +51,10 @@
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGiderHareketi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
+            this.barBtnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
+            this.btnFirmaTanim = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,8 +82,12 @@
             this.btnRaporAylik,
             this.barSubItem6,
             this.btnGiderHar,
-            this.btnGiderHareketi});
-            this.barManager1.MaxItemId = 16;
+            this.btnGiderHareketi,
+            this.barSubItem7,
+            this.barBtnGiderTanim,
+            this.barSubItem8,
+            this.btnFirmaTanim});
+            this.barManager1.MaxItemId = 20;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -127,8 +135,8 @@
             this.barSubItem3.Caption = "Tanımlar";
             this.barSubItem3.Id = 4;
             this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderTip),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderTanim)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem8)});
             this.barSubItem3.Name = "barSubItem3";
             // 
             // btnGiderTip
@@ -184,6 +192,13 @@
             this.btnRaporAylik.Name = "btnRaporAylik";
             this.btnRaporAylik.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporAylik_ItemClick);
             // 
+            // btnGiderHareketi
+            // 
+            this.btnGiderHareketi.Caption = "Gider Hareketleri";
+            this.btnGiderHareketi.Id = 15;
+            this.btnGiderHareketi.Name = "btnGiderHareketi";
+            this.btnGiderHareketi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHareketi_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -238,12 +253,36 @@
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // btnGiderHareketi
+            // barSubItem7
             // 
-            this.btnGiderHareketi.Caption = "Gider Hareketleri";
-            this.btnGiderHareketi.Id = 15;
-            this.btnGiderHareketi.Name = "btnGiderHareketi";
-            this.btnGiderHareketi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHareketi_ItemClick);
+            this.barSubItem7.Caption = "Gider Tanımları";
+            this.barSubItem7.Id = 16;
+            this.barSubItem7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderTip),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnGiderTanim)});
+            this.barSubItem7.Name = "barSubItem7";
+            // 
+            // barBtnGiderTanim
+            // 
+            this.barBtnGiderTanim.Caption = "Gider Tanımı";
+            this.barBtnGiderTanim.Id = 17;
+            this.barBtnGiderTanim.Name = "barBtnGiderTanim";
+            this.barBtnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
+            // 
+            // barSubItem8
+            // 
+            this.barSubItem8.Caption = "Firma Tanımları";
+            this.barSubItem8.Id = 18;
+            this.barSubItem8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnFirmaTanim)});
+            this.barSubItem8.Name = "barSubItem8";
+            // 
+            // btnFirmaTanim
+            // 
+            this.btnFirmaTanim.Caption = "Firma Tanımı";
+            this.btnFirmaTanim.Id = 19;
+            this.btnFirmaTanim.Name = "btnFirmaTanim";
+            this.btnFirmaTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFirmaTanim_ItemClick);
             // 
             // scrMain
             // 
@@ -288,5 +327,9 @@
         private DevExpress.XtraBars.BarSubItem barSubItem6;
         private DevExpress.XtraBars.BarButtonItem btnGiderHar;
         private DevExpress.XtraBars.BarButtonItem btnGiderHareketi;
+        private DevExpress.XtraBars.BarSubItem barSubItem7;
+        private DevExpress.XtraBars.BarButtonItem barBtnGiderTanim;
+        private DevExpress.XtraBars.BarSubItem barSubItem8;
+        private DevExpress.XtraBars.BarButtonItem btnFirmaTanim;
     }
 }
