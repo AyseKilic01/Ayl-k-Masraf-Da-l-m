@@ -36,8 +36,11 @@
             this.btnChangePass = new DevExpress.XtraBars.BarButtonItem();
             this.btnAdminPanel = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
             this.btnGiderTip = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
+            this.btnFirmaTanim = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
             this.btnGiderHar = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
@@ -50,11 +53,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
-            this.barBtnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
-            this.btnFirmaTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.cBarButtonItem1 = new afbLibrary.cBarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,8 +87,9 @@
             this.barSubItem7,
             this.barBtnGiderTanim,
             this.barSubItem8,
-            this.btnFirmaTanim});
-            this.barManager1.MaxItemId = 20;
+            this.btnFirmaTanim,
+            this.cBarButtonItem1});
+            this.barManager1.MaxItemId = 21;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -101,7 +103,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.cBarButtonItem1)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -139,6 +142,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem8)});
             this.barSubItem3.Name = "barSubItem3";
             // 
+            // barSubItem7
+            // 
+            this.barSubItem7.Caption = "Gider Tanımları";
+            this.barSubItem7.Id = 16;
+            this.barSubItem7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderTip),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnGiderTanim)});
+            this.barSubItem7.Name = "barSubItem7";
+            // 
             // btnGiderTip
             // 
             this.btnGiderTip.Caption = "Gider Tipleri";
@@ -146,12 +158,27 @@
             this.btnGiderTip.Name = "btnGiderTip";
             this.btnGiderTip.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTip_ItemClick);
             // 
-            // btnGiderTanim
+            // barBtnGiderTanim
             // 
-            this.btnGiderTanim.Caption = "Gider Tanımları";
-            this.btnGiderTanim.Id = 9;
-            this.btnGiderTanim.Name = "btnGiderTanim";
-            this.btnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
+            this.barBtnGiderTanim.Caption = "Gider Tanımı";
+            this.barBtnGiderTanim.Id = 17;
+            this.barBtnGiderTanim.Name = "barBtnGiderTanim";
+            this.barBtnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
+            // 
+            // barSubItem8
+            // 
+            this.barSubItem8.Caption = "Firma Tanımları";
+            this.barSubItem8.Id = 18;
+            this.barSubItem8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnFirmaTanim)});
+            this.barSubItem8.Name = "barSubItem8";
+            // 
+            // btnFirmaTanim
+            // 
+            this.btnFirmaTanim.Caption = "Firma Tanımı";
+            this.btnFirmaTanim.Id = 19;
+            this.btnFirmaTanim.Name = "btnFirmaTanim";
+            this.btnFirmaTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFirmaTanim_ItemClick);
             // 
             // barSubItem6
             // 
@@ -248,41 +275,24 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
             this.barSubItem1.Name = "barSubItem1";
             // 
+            // btnGiderTanim
+            // 
+            this.btnGiderTanim.Caption = "Gider Tanımları";
+            this.btnGiderTanim.Id = 9;
+            this.btnGiderTanim.Name = "btnGiderTanim";
+            this.btnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
+            // 
             // barButtonItem5
             // 
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barSubItem7
+            // cBarButtonItem1
             // 
-            this.barSubItem7.Caption = "Gider Tanımları";
-            this.barSubItem7.Id = 16;
-            this.barSubItem7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGiderTip),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnGiderTanim)});
-            this.barSubItem7.Name = "barSubItem7";
-            // 
-            // barBtnGiderTanim
-            // 
-            this.barBtnGiderTanim.Caption = "Gider Tanımı";
-            this.barBtnGiderTanim.Id = 17;
-            this.barBtnGiderTanim.Name = "barBtnGiderTanim";
-            this.barBtnGiderTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderTanim_ItemClick);
-            // 
-            // barSubItem8
-            // 
-            this.barSubItem8.Caption = "Firma Tanımları";
-            this.barSubItem8.Id = 18;
-            this.barSubItem8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnFirmaTanim)});
-            this.barSubItem8.Name = "barSubItem8";
-            // 
-            // btnFirmaTanim
-            // 
-            this.btnFirmaTanim.Caption = "Firma Tanımı";
-            this.btnFirmaTanim.Id = 19;
-            this.btnFirmaTanim.Name = "btnFirmaTanim";
-            this.btnFirmaTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFirmaTanim_ItemClick);
+            this.cBarButtonItem1.Caption = "TEST";
+            this.cBarButtonItem1.Id = 20;
+            this.cBarButtonItem1.Name = "cBarButtonItem1";
+            this.cBarButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cBarButtonItem1_ItemClick);
             // 
             // scrMain
             // 
@@ -294,6 +304,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "scrMain";
             this.Text = "Aylık Masraf Takibi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -331,5 +342,6 @@
         private DevExpress.XtraBars.BarButtonItem barBtnGiderTanim;
         private DevExpress.XtraBars.BarSubItem barSubItem8;
         private DevExpress.XtraBars.BarButtonItem btnFirmaTanim;
+        private afbLibrary.cBarButtonItem cBarButtonItem1;
     }
 }

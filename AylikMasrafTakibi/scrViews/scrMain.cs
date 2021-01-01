@@ -18,8 +18,6 @@ namespace AylikMasrafTakibi.scrViews
         public scrMain()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
-
         }
 
         #region administration
@@ -42,7 +40,7 @@ namespace AylikMasrafTakibi.scrViews
         private void btnGiderTip_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             scrGiderTip frm = new scrGiderTip();
-            frm.MdiParent = this;
+     
             frm.Show();
         }
 
@@ -50,11 +48,10 @@ namespace AylikMasrafTakibi.scrViews
         {
             scrGiderTanim frm = new scrGiderTanim();
             frm.Show();
-            this.Hide();
         }
         private void btnFirmaTanim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AFrmFirmaList frm = new AFrmFirmaList();
+            scrFirma frm = new scrFirma();
             frm.Show();
             this.Hide();
 
@@ -64,7 +61,8 @@ namespace AylikMasrafTakibi.scrViews
         #region actions
         private void btnGiderHar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            AFrmGiderHareketList frm = new AFrmGiderHareketList();
+            frm.Show();
         }
         #endregion
 
@@ -82,8 +80,12 @@ namespace AylikMasrafTakibi.scrViews
         }
 
 
+
         #endregion
 
-        
+        private void cBarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
     }
 }

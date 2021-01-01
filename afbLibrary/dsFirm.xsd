@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFirm" targetNamespace="http://tempuri.org/dsFirm.xsd" xmlns:mstns="http://tempuri.org/dsFirm.xsd" xmlns="http://tempuri.org/dsFirm.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFirm" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFirm" msprop:Generator_UserDSName="dsFirm">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Firma" msprop:Generator_TableClassName="FirmaDataTable" msprop:Generator_TableVarName="tableFirma" msprop:Generator_TablePropName="Firma" msprop:Generator_RowDeletingName="FirmaRowDeleting" msprop:Generator_RowChangingName="FirmaRowChanging" msprop:Generator_RowEvHandlerName="FirmaRowChangeEventHandler" msprop:Generator_RowDeletedName="FirmaRowDeleted" msprop:Generator_UserTableName="Firma" msprop:Generator_RowChangedName="FirmaRowChanged" msprop:Generator_RowEvArgName="FirmaRowChangeEvent" msprop:Generator_RowClassName="FirmaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="kod" msdata:Caption="code" msprop:Generator_ColumnVarNameInTable="columnkod" msprop:Generator_ColumnPropNameInRow="kod" msprop:Generator_ColumnPropNameInTable="kodColumn" msprop:Generator_UserColumnName="kod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="aciklama" msdata:Caption="explanation" msprop:Generator_ColumnVarNameInTable="columnaciklama" msprop:Generator_ColumnPropNameInRow="aciklama" msprop:Generator_ColumnPropNameInTable="aciklamaColumn" msprop:Generator_UserColumnName="aciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pasif" msprop:Generator_ColumnVarNameInTable="columnpasif" msprop:Generator_ColumnPropNameInRow="pasif" msprop:Generator_ColumnPropNameInTable="pasifColumn" msprop:Generator_UserColumnName="pasif" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Firma" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

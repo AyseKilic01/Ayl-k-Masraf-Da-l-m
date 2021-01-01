@@ -68,11 +68,73 @@
       <DependentUpon>cGridLookupEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="dsFirm.cs">
+      <DependentUpon>dsFirm.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsFirm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFirm.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsGider.cs">
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsGider.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsGiderTip.cs">
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormClass\cFirm.cs" />
+    <Compile Include="FormClass\cGiderTanim.cs" />
+    <Compile Include="FormClass\cGiderTip.cs" />
+    <Compile Include="FormClass\Result.cs" />
+    <Compile Include="dsGiderTip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="dsFirm.xsc">
+      <DependentUpon>dsFirm.xsd</DependentUpon>
+    </None>
+    <None Include="dsFirm.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFirm.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsFirm.xss">
+      <DependentUpon>dsFirm.xsd</DependentUpon>
+    </None>
+    <None Include="dsGider.xsc">
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </None>
+    <None Include="dsGider.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGider.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsGider.xss">
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </None>
+    <None Include="dsGiderTip.xsc">
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
+    </None>
+    <None Include="dsGiderTip.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGiderTip.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsGiderTip.xss">
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

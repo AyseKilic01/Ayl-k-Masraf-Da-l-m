@@ -1,6 +1,7 @@
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\AylikMasrafTakibi.exe.config
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\AylikMasrafTakibi.exe
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\AylikMasrafTakibi.pdb
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Data.v18.1.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Diagram.v18.1.Core.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Printing.v18.1.Core.dll
@@ -21,6 +22,7 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.RichEdit.v18.1.Core.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Office.v18.1.Core.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Images.v18.1.dll
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.pdb
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Data.v18.1.xml
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Diagram.v18.1.Core.xml
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\DevExpress.Printing.v18.1.Core.xml
@@ -104,11 +106,13 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\de\DevExpre
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\es\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\ja\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\ru\DevExpress.Office.v18.1.Core.resources.dll
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.csprojResolveAssemblyReference.cache
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.AForms.AFrmGiderHareketList.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.Reports.RepAylikMasrafTakip.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.Reports.RepGiderHareketleri.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.scrFirma.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.scrGiderTanim.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.scrGiderTip.resources
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.winformmain.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.scrMain.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.srcLogin.resources
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.Properties.Resources.resources
@@ -117,8 +121,4 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasraf
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.exe.licenses
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.exe
 C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.pdb
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.csprojResolveAssemblyReference.cache
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.dll
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\bin\Debug\afbLibrary.pdb
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.AForms.AFrmFirmaList.resources
-C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.AForms.AFrmGiderHareketList.resources
+C:\Users\ayse\CProject\AylikMasrafTakibi\AylikMasrafTakibi\obj\Debug\AylikMasrafTakibi.scrViews.scrGiderHareket.resources

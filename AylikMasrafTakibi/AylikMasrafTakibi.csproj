@@ -70,12 +70,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AForms\AFrmFirmaList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AForms\AFrmFirmaList.Designer.cs">
-      <DependentUpon>AFrmFirmaList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AForms\AFrmGiderHareketList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +80,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGiderTip.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsGider.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entities\cSqlDataAdapter.cs" />
     <Compile Include="Reports\RepAylikMasrafTakip.cs">
@@ -105,6 +94,18 @@
     <Compile Include="Reports\RepGiderHareketleri.Designer.cs">
       <DependentUpon>RepGiderHareketleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="scrViews\scrFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scrViews\scrFirma.Designer.cs">
+      <DependentUpon>scrFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="scrViews\scrGiderHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scrViews\scrGiderHareket.Designer.cs">
+      <DependentUpon>scrGiderHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="scrViews\scrGiderTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,12 +117,6 @@
     </Compile>
     <Compile Include="scrViews\scrGiderTip.Designer.cs">
       <DependentUpon>scrGiderTip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="scrViews\winformmain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="scrViews\winformmain.Designer.cs">
-      <DependentUpon>winformmain.cs</DependentUpon>
     </Compile>
     <Compile Include="scrViews\scrMain.cs">
       <SubType>Form</SubType>
@@ -143,9 +138,6 @@
     <Compile Include="UserControls\ucGiderHareketi.Designer.cs">
       <DependentUpon>ucGiderHareketi.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AForms\AFrmFirmaList.resx">
-      <DependentUpon>AFrmFirmaList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AForms\AFrmGiderHareketList.resx">
       <DependentUpon>AFrmGiderHareketList.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,14 +148,17 @@
     <EmbeddedResource Include="Reports\RepGiderHareketleri.resx">
       <DependentUpon>RepGiderHareketleri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="scrViews\scrFirma.resx">
+      <DependentUpon>scrFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scrViews\scrGiderHareket.resx">
+      <DependentUpon>scrGiderHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="scrViews\scrGiderTanim.resx">
       <DependentUpon>scrGiderTanim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="scrViews\scrGiderTip.resx">
       <DependentUpon>scrGiderTip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="scrViews\winformmain.resx">
-      <DependentUpon>winformmain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="scrViews\scrMain.resx">
       <DependentUpon>scrMain.cs</DependentUpon>
@@ -193,17 +188,6 @@
     </None>
     <None Include="dsGiderTip.xss">
       <DependentUpon>dsGiderTip.xsd</DependentUpon>
-    </None>
-    <None Include="dsGider.xsc">
-      <DependentUpon>dsGider.xsd</DependentUpon>
-    </None>
-    <None Include="dsGider.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsGider.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dsGider.xss">
-      <DependentUpon>dsGider.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

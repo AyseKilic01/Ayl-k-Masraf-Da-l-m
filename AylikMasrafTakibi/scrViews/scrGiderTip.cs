@@ -9,61 +9,58 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using afbLibrary;
+using afbLibrary.FormClass;
 
 namespace AylikMasrafTakibi.scrViews
 {
     public partial class scrGiderTip : Form
     {
-        #region constructor
-        DataTable dtMain = new DataTable();
-        SqlDataAdapter daMain = new SqlDataAdapter();
+        #region const
         SqlConnection con = new SqlConnection(cons.getConnectionString());
+        cGiderTip cgidertip = null;
         #endregion
+
         public scrGiderTip()
         {
             InitializeComponent();
-        }
-        private void List()
-        {
-            SqlCommand cmm = new SqlCommand();
-            cmm.Connection = con;
-            cmm.CommandText = "Select a.id, a.code, a.explanation, a.pasif from parGiderTip a ";
-            daMain = new SqlDataAdapter(cmm);
-            cCommandBuilder cb = new cCommandBuilder();
-            cb.AddField("id", SqlDbType.Int, 4, true);
-            cb.AddField("code", SqlDbType.VarChar, 50);
-            cb.AddField("explanation", SqlDbType.VarChar, 130);
-            cb.AddField("pasif", SqlDbType.Bit, 0);
-            cb.SqlTableName = "parGiderTip";
-            cb.Con = con;
-            cb.CreateCommands(daMain);
-
-            daMain.Fill(dtMain);
-
+            cgidertip = new cGiderTip();
         }
 
-     
-        private void btnKapat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            scrMain frm = new scrMain();
-            frm.Show();
-
-        }
-        private void btnKaydet_Click(object sender, EventArgs e)
-        {
-            Kaydet();
-        }
-        private void Kaydet()
+        private void SaveData()
         {
             gridView2.UpdateCurrentRow();
-            daMain.Update(dtMain);
+            cgidertip.SaveData();
         }
 
-        private void gridControl1_Load(object sender, EventArgs e)
+
+        public bool ValidateForm()
         {
-            List();
-            cGridControl1.DataSource = dtMain;
+            return true;
+        }
+        private void scrGiderTanim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            scrMain frm = new scrMain();
+            frm.Show();
+        }
+       
+        private void cGridControl1_Load(object sender, EventArgs e)
+        {
+            cgidertip.LoadData();
+            cGridControl1.DataSource = cgidertip.cDsGiderTip.GiderTip;
+        }
+
+        private void btnKaydet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveData();
+        }
+        private void btnKaydetKapat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveData();
+            Close();
+        }
+        private void btnKapat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
         }
     }
 }

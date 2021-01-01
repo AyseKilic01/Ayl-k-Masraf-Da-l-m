@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AylikMasrafTakibi.AForms
+namespace AylikMasrafTakibi.scrViews
 {
-    public partial class AFrmFirmaList : Form
+    public partial class scrGiderHareket : Form
     {
-        public AFrmFirmaList()
+        public scrGiderHareket()
         {
             InitializeComponent();
-        }
-
-        private void btnKayit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnList_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

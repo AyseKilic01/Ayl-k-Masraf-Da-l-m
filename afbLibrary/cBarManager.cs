@@ -13,10 +13,6 @@ namespace afbLibrary
     [ToolboxItem(true)]
     public partial class cBarManager : BarManager
     {
-        protected override void RaiseItemClick(ItemClickEventArgs e)
-        {
-            base.RaiseItemClick(e);
-        }
         public cBarManager(IContainer container) : base(container)
         {
 
@@ -26,14 +22,6 @@ namespace afbLibrary
             cBarButtonItem.Register();
             cBarSubItem.Register();
         }
-        bool saveandload = false;
-        [System.ComponentModel.DefaultValue(false)]
-        public bool cSaveAndLoad
-        {
-            get { return saveandload; }
-            set { saveandload = value; }
-        }
-
     }
     public class cBarButtonItem : BarButtonItem
     {
