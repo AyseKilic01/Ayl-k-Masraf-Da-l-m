@@ -47,6 +47,7 @@
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.btnRaporAylik = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiderHareketi = new DevExpress.XtraBars.BarButtonItem();
+            this.cBarButtonItem1 = new afbLibrary.cBarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -55,7 +56,6 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.cBarButtonItem1 = new afbLibrary.cBarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,8 +103,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.cBarButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -226,6 +225,13 @@
             this.btnGiderHareketi.Name = "btnGiderHareketi";
             this.btnGiderHareketi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHareketi_ItemClick);
             // 
+            // cBarButtonItem1
+            // 
+            this.cBarButtonItem1.Caption = "TEST";
+            this.cBarButtonItem1.Id = 20;
+            this.cBarButtonItem1.Name = "cBarButtonItem1";
+      
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -286,13 +292,6 @@
             // 
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // cBarButtonItem1
-            // 
-            this.cBarButtonItem1.Caption = "TEST";
-            this.cBarButtonItem1.Id = 20;
-            this.cBarButtonItem1.Name = "cBarButtonItem1";
-            this.cBarButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cBarButtonItem1_ItemClick);
             // 
             // scrMain
             // 

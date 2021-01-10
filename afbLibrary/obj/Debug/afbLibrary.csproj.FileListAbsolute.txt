@@ -82,3 +82,4 @@ C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\bin\Debug\ru\DevExpress.Offi
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.dll.licenses
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.dll
 C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.pdb
+C:\Users\ayse\CProject\AylikMasrafTakibi\afbLibrary\obj\Debug\afbLibrary.csprojResolveAssemblyReference.cache

@@ -84,10 +84,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsGiderHareket.cs">
+      <DependentUpon>dsGiderHareket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsGiderHareket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGiderHareket.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsGiderTip.cs">
       <DependentUpon>dsGiderTip.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormClass\cFirm.cs" />
+    <Compile Include="FormClass\cGiderHar.cs" />
     <Compile Include="FormClass\cGiderTanim.cs" />
     <Compile Include="FormClass\cGiderTip.cs" />
     <Compile Include="FormClass\Result.cs" />
@@ -123,6 +132,17 @@
     </None>
     <None Include="dsGider.xss">
       <DependentUpon>dsGider.xsd</DependentUpon>
+    </None>
+    <None Include="dsGiderHareket.xsc">
+      <DependentUpon>dsGiderHareket.xsd</DependentUpon>
+    </None>
+    <None Include="dsGiderHareket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGiderHareket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsGiderHareket.xss">
+      <DependentUpon>dsGiderHareket.xsd</DependentUpon>
     </None>
     <None Include="dsGiderTip.xsc">
       <DependentUpon>dsGiderTip.xsd</DependentUpon>

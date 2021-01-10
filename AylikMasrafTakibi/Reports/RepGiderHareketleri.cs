@@ -49,5 +49,10 @@ namespace AylikMasrafTakibi.Reports
             daMain.Fill(dtMain);
 
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

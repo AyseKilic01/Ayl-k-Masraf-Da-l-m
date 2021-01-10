@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AFrmGiderHareketList));
             this.cGridControl1 = new afbLibrary.cGridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.id = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,6 +149,7 @@
             this.ClientSize = new System.Drawing.Size(1078, 480);
             this.Controls.Add(this.cGridControl1);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AFrmGiderHareketList";
             this.Text = "Gider Hareketleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

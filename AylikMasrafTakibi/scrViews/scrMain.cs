@@ -69,23 +69,18 @@ namespace AylikMasrafTakibi.scrViews
         #region reports
         private void btnRaporAylik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            RepAylikMasrafTakip aylk = new RepAylikMasrafTakip();
-            aylk.Show();
+            RepAylikMasrafTakip frm = new RepAylikMasrafTakip();
+            frm.Show();
         }
 
         private void btnGiderHareketi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            RepGiderHareketleri gdr = new RepGiderHareketleri();
-            gdr.Show();
+            RepGiderHareketleri frm = new RepGiderHareketleri();
+            frm.Show();
         }
-
-
 
         #endregion
 
-        private void cBarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
-        }
+     
     }
 }

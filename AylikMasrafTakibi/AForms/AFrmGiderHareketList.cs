@@ -18,7 +18,8 @@ namespace AylikMasrafTakibi.AForms
         DataTable dt = new DataTable();
         SqlConnection con = new SqlConnection(cons.getConnectionString());
         SqlDataAdapter daMain = null;
-        
+        afbLibrary.FormClass.cGiderHar cFrm = new afbLibrary.FormClass.cGiderHar();
+
         public AFrmGiderHareketList()
         {
             InitializeComponent();
@@ -28,17 +29,21 @@ namespace AylikMasrafTakibi.AForms
             scrMain frm = new scrMain();
             frm.Show();
         }
-       
+
         private void LoadData()
         {
             SqlCommand cmm = new SqlCommand();
             cmm.Connection = con;
             cmm.CommandText = "select a.id, a.kod, a.aciklama, a.tarih, a.firmaref, firmakod = b.kod  from giderharmain a " +
                 "left outer join parFirma b on b.id = a.firmaref ";
-
             daMain = new SqlDataAdapter(cmm);
             daMain.Fill(dt);
             cGridControl1.DataSource = dt;
+        }
+
+        public void toDetail(int mainref)
+        {
+            scrGiderHareket m = new scrGiderHareket(mainref);
         }
         private void cGridControl1_Load(object sender, EventArgs e)
         {
@@ -47,7 +52,12 @@ namespace AylikMasrafTakibi.AForms
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            scrGiderHareket frm = new scrGiderHareket();
+            int mainid = Convert.ToInt32(gridView1.GetFocusedRowCellValue(id));
+            cFrm.Kod = Convert.ToString(gridView1.GetFocusedRowCellValue(colkod));
+            cFrm.Aciklama = Convert.ToString(gridView1.GetFocusedRowCellValue(colaciklama));
+            cFrm.FirmaKod = Convert.ToString(gridView1.GetFocusedRowCellValue(colfirmref));
+            cFrm.Tarih = Convert.ToDateTime(gridView1.GetFocusedRowCellValue(coltarih));
+            scrGiderHareket frm = new scrGiderHareket(mainid);
             frm.Show();
         }
 
