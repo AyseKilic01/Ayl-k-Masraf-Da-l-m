@@ -28,6 +28,8 @@ namespace afbLibrary {
         
         private giderhardetailDataTable tablegiderhardetail;
         
+        private global::System.Data.DataRelation relationgiderharmain_giderhardetail;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -218,6 +220,7 @@ namespace afbLibrary {
                     this.tablegiderhardetail.InitVars();
                 }
             }
+            this.relationgiderharmain_giderhardetail = this.Relations["giderharmain_giderhardetail"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +235,10 @@ namespace afbLibrary {
             base.Tables.Add(this.tablegiderharmain);
             this.tablegiderhardetail = new giderhardetailDataTable();
             base.Tables.Add(this.tablegiderhardetail);
+            this.relationgiderharmain_giderhardetail = new global::System.Data.DataRelation("giderharmain_giderhardetail", new global::System.Data.DataColumn[] {
+                        this.tablegiderharmain.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablegiderhardetail.mainidColumn}, false);
+            this.Relations.Add(this.relationgiderharmain_giderhardetail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -747,15 +754,18 @@ namespace afbLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public giderhardetailRow AddgiderhardetailRow(int id, int mainid, int giderid, int miktar, double fiyat, double tutar) {
+            public giderhardetailRow AddgiderhardetailRow(int id, giderharmainRow parentgiderharmainRowBygiderharmain_giderhardetail, int giderid, int miktar, double fiyat, double tutar) {
                 giderhardetailRow rowgiderhardetailRow = ((giderhardetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        mainid,
+                        null,
                         giderid,
                         miktar,
                         fiyat,
                         tutar};
+                if ((parentgiderharmainRowBygiderharmain_giderhardetail != null)) {
+                    columnValuesArray[1] = parentgiderharmainRowBygiderharmain_giderhardetail[0];
+                }
                 rowgiderhardetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgiderhardetailRow);
                 return rowgiderhardetailRow;
@@ -1080,6 +1090,17 @@ namespace afbLibrary {
             public void SetfirmarefNull() {
                 this[this.tablegiderharmain.firmarefColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public giderhardetailRow[] GetgiderhardetailRows() {
+                if ((this.Table.ChildRelations["giderharmain_giderhardetail"] == null)) {
+                    return new giderhardetailRow[0];
+                }
+                else {
+                    return ((giderhardetailRow[])(base.GetChildRows(this.Table.ChildRelations["giderharmain_giderhardetail"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1189,6 +1210,17 @@ namespace afbLibrary {
                 }
                 set {
                     this[this.tablegiderhardetail.tutarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public giderharmainRow giderharmainRow {
+                get {
+                    return ((giderharmainRow)(this.GetParentRow(this.Table.ParentRelations["giderharmain_giderhardetail"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["giderharmain_giderhardetail"]);
                 }
             }
             

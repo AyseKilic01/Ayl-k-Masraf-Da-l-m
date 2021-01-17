@@ -75,21 +75,22 @@ namespace AylikMasrafTakibi.scrViews
             cGridControl1.DataSource = cFrm.cDsGiderHar.giderhardetail;
 
         }
-        private void AddGiderHar()
-        {
-            SqlCommand cmm = new SqlCommand();
-            cmm.Connection = con;
-            cmm.CommandText = "INSERT INTO giderharmain (kod, aciklama, tarih, firmaref) VALUES(@kod, @aciklama, @tarih, @firmaref)";
-            cmm.Parameters.AddWithValue("@kod", Convert.ToInt32(txtKod.Text));
-            cmm.Parameters.AddWithValue("@aciklama", txtAciklama.Text);
-            cmm.Parameters.AddWithValue("@tarih", dtTime.Text);
-            cmm.Parameters.AddWithValue("@firmaref", lkFirma.EditValue);
-            cmm.Connection.Open();
-            cmm.ExecuteNonQuery();
-            cmm.CommandText = "INSERT INTO giderhardetail (mainid, giderid, miktar, fiyat, tutar) VALUES(@mainid, @giderid, @miktar, @fiyat, @tutar)";
-            cmm.ExecuteNonQuery();
-            cmm.Connection.Close();
-        }
+        //private void AddGiderHar()
+        //{
+        //    SqlCommand cmm = new SqlCommand();
+        //    cmm.Connection = con;
+        //    cmm.CommandText = "INSERT INTO giderharmain (kod, aciklama, tarih, firmaref) VALUES(@kod, @aciklama, @tarih, @firmaref)";
+        //    cmm.Parameters.AddWithValue("@kod", Convert.ToInt32(txtKod.Text));
+        //    cmm.Parameters.AddWithValue("@aciklama", txtAciklama.Text);
+        //    cmm.Parameters.AddWithValue("@tarih", dtTime.Text);
+        //    cmm.Parameters.AddWithValue("@firmaref", lkFirma.EditValue);
+        //    cmm.Connection.Open();
+        //    cmm.ExecuteNonQuery();
+        //    cmm.CommandText = "INSERT INTO giderhardetail (mainid, giderid, miktar, fiyat, tutar) VALUES(@mainid, @giderid, @miktar, @fiyat, @tutar)";
+        //    cmm.ExecuteNonQuery();
+        //    cmm.Connection.Close();
+        //}
+
 
         private void cGridControl1_Load(object sender, EventArgs e)
         {

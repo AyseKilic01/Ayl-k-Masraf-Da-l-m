@@ -48,12 +48,21 @@ namespace afbLibrary.FormClass
 
         public void LoadData()
         {
-            daMain.Fill(dsGiderHar1.giderhardetail);
+
         }
         public void SaveData()
         {
+
+        }
+        private void SaveMain()
+        {
+            daMain.Update(dsGiderHar1.giderharmain);
+        }
+        private void SaveDetail()
+        {
             daMain.Update(dsGiderHar1.giderhardetail);
         }
+
 
     }
 }
