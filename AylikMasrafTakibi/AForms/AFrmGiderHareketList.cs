@@ -45,9 +45,16 @@ namespace AylikMasrafTakibi.AForms
         {
             scrGiderHareket m = new scrGiderHareket(mainref);
         }
+        private void Refresh(object sender, EventArgs e)
+        {
+            dt.Clear();
+            LoadData();
+        }
+
         private void cGridControl1_Load(object sender, EventArgs e)
         {
             LoadData();
+            
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

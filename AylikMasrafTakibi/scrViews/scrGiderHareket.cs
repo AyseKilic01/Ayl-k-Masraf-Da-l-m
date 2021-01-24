@@ -61,7 +61,8 @@ namespace AylikMasrafTakibi.scrViews
         private void LoadData()
         {
             cSqlCommand cmm = new cSqlCommand();
-            cmm.CommandText = "SELECT a.id, a.mainid, a.giderid, giderkod = c.code, a.miktar, a.fiyat, a.tutar, b.aciklama, b.tarih, b.firmaref " +
+            cmm.CommandText = "SELECT a.id, a.mainid, a.giderid, giderkod = c.code, a.miktar, " +
+                "a.fiyat, a.tutar, b.aciklama, b.tarih, b.firmaref " +
                 "FROM giderhardetail a " +
                 "INNER JOIN giderharmain b on b.id = a.mainid " +
                 "INNER JOIN parGider c on c.id = a.giderid " +

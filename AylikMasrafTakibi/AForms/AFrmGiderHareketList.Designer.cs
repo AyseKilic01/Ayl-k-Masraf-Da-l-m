@@ -140,7 +140,7 @@
             this.btnListele.Size = new System.Drawing.Size(126, 23);
             this.btnListele.TabIndex = 0;
             this.btnListele.Text = "Listeyi Güncelle";
-            this.btnListele.Click += new System.EventHandler(this.cGridControl1_Load);
+            this.btnListele.Click += new System.EventHandler(this.Refresh);
             // 
             // AFrmGiderHareketList
             // 
