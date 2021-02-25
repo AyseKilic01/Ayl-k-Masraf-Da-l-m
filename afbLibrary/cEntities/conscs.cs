@@ -29,7 +29,7 @@ namespace afbLibrary
         public static string getConnectionString()
         {
             // return "Data Source=" + servername.ToString() + ";Initial Catalog=" + databasename.ToString() + ";User ID=" + username.ToString() + ";Password=" + password.ToString();
-            return "server=DEVELOPER\\AYSE; Initial Catalog=afb; User ID = sa; Password = 123321 ; Integrated Security=SSPI";
+            return "server=DESKTOP-UP0D5VP; Initial Catalog=afb; User ID = sa; Password = 12355; Integrated Security=SSPI";
         }
     }
 }
