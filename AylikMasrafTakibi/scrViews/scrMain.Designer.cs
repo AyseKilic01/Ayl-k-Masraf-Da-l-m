@@ -47,7 +47,6 @@
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.btnRaporAylik = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiderHareketi = new DevExpress.XtraBars.BarButtonItem();
-            this.cBarButtonItem1 = new afbLibrary.cBarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -56,6 +55,7 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnGiderTanim = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.cBarButtonItem1 = new afbLibrary.cBarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,28 +225,23 @@
             this.btnGiderHareketi.Name = "btnGiderHareketi";
             this.btnGiderHareketi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiderHareketi_ItemClick);
             // 
-            // cBarButtonItem1
-            // 
-            this.cBarButtonItem1.Caption = "TEST";
-            this.cBarButtonItem1.Id = 20;
-            this.cBarButtonItem1.Name = "cBarButtonItem1";
-      
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(825, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1149, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 284);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 406);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(825, 25);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1149, 31);
             // 
             // barDockControlLeft
             // 
@@ -254,15 +249,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 284);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 406);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(825, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1149, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 284);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 406);
             // 
             // barToolbarsListItem1
             // 
@@ -293,17 +290,26 @@
             this.barButtonItem5.Id = 10;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
+            // cBarButtonItem1
+            // 
+            this.cBarButtonItem1.Caption = "TEST";
+            this.cBarButtonItem1.Id = 20;
+            this.cBarButtonItem1.Name = "cBarButtonItem1";
+            // 
             // scrMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 309);
+            this.ClientSize = new System.Drawing.Size(1149, 437);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "scrMain";
             this.Text = "Aylık Masraf Takibi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

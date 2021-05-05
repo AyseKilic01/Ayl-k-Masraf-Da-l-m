@@ -57,9 +57,10 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(736, 22);
+            this.barDockControlRight.Location = new System.Drawing.Point(1226, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 681);
             // 
             // barManager1
             // 
@@ -81,6 +82,14 @@
             // 
             // bar3
             // 
+            this.bar3.BarAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bar3.BarAppearance.Disabled.Options.UseFont = true;
+            this.bar3.BarAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bar3.BarAppearance.Hovered.Options.UseFont = true;
+            this.bar3.BarAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bar3.BarAppearance.Normal.Options.UseFont = true;
+            this.bar3.BarAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bar3.BarAppearance.Pressed.Options.UseFont = true;
             this.bar3.BarName = "Custom 2";
             this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar3.DockCol = 0;
@@ -123,23 +132,26 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(736, 22);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlTop.Size = new System.Drawing.Size(1226, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 462);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 711);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(736, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1226, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 440);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 681);
             // 
             // bar2
             // 
@@ -171,44 +183,54 @@
             // 
             this.pasif.Caption = "Pasif";
             this.pasif.FieldName = "pasif";
+            this.pasif.MinWidth = 34;
             this.pasif.Name = "pasif";
             this.pasif.Visible = true;
             this.pasif.VisibleIndex = 2;
-            this.pasif.Width = 137;
+            this.pasif.Width = 229;
             // 
             // aciklama
             // 
             this.aciklama.Caption = "Açıklama";
             this.aciklama.FieldName = "aciklama";
+            this.aciklama.MinWidth = 34;
             this.aciklama.Name = "aciklama";
             this.aciklama.Visible = true;
             this.aciklama.VisibleIndex = 1;
-            this.aciklama.Width = 135;
+            this.aciklama.Width = 225;
             // 
             // kod
             // 
             this.kod.Caption = "Kod";
             this.kod.FieldName = "kod";
+            this.kod.MinWidth = 34;
             this.kod.Name = "kod";
             this.kod.Visible = true;
             this.kod.VisibleIndex = 0;
-            this.kod.Width = 110;
+            this.kod.Width = 184;
             // 
             // id
             // 
             this.id.FieldName = "id";
+            this.id.MinWidth = 34;
             this.id.Name = "id";
             this.id.OptionsColumn.ShowCaption = false;
             this.id.OptionsColumn.ShowInCustomizationForm = false;
             this.id.OptionsColumn.ShowInExpressionEditor = false;
+            this.id.Width = 125;
             // 
             // gridView2
             // 
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.id,
             this.kod,
             this.aciklama,
             this.pasif});
+            this.gridView2.DetailHeight = 539;
             this.gridView2.GridControl = this.cGridControl1;
             this.gridView2.Name = "gridView2";
             this.gridView2.NewItemRowText = "Yeni Kayıt Satırı";
@@ -220,10 +242,12 @@
             // cGridControl1
             // 
             this.cGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cGridControl1.Location = new System.Drawing.Point(0, 22);
+            this.cGridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
+            this.cGridControl1.Location = new System.Drawing.Point(0, 30);
             this.cGridControl1.MainView = this.gridView2;
+            this.cGridControl1.Margin = new System.Windows.Forms.Padding(5);
             this.cGridControl1.Name = "cGridControl1";
-            this.cGridControl1.Size = new System.Drawing.Size(719, 440);
+            this.cGridControl1.Size = new System.Drawing.Size(1197, 681);
             this.cGridControl1.TabIndex = 5;
             this.cGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -232,23 +256,26 @@
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(719, 22);
+            this.vScrollBar1.Location = new System.Drawing.Point(1197, 30);
+            this.vScrollBar1.Margin = new System.Windows.Forms.Padding(5);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 440);
+            this.vScrollBar1.Size = new System.Drawing.Size(29, 681);
             this.vScrollBar1.TabIndex = 4;
             // 
             // scrFirma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 462);
+            this.ClientSize = new System.Drawing.Size(1226, 711);
             this.Controls.Add(this.cGridControl1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "scrFirma";
             this.Text = "Firma Tanımı";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

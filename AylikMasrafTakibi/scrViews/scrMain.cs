@@ -53,7 +53,7 @@ namespace AylikMasrafTakibi.scrViews
         {
             scrFirma frm = new scrFirma();
             frm.Show();
-            this.Hide();
+            //this.Hide();
 
         }
         #endregion
